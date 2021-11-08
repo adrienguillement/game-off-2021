@@ -334,7 +334,7 @@ MonoBehaviour:
   explosion: {fileID: 8109720096702685338, guid: 03c00e28915b00c43b739cec3f63a839, type: 3}
   speed: 10
   delay: 1
-  firerate: 3
+  firerate: 20
 --- !u!1 &7661331977358133164
 GameObject:
   m_ObjectHideFlags: 0

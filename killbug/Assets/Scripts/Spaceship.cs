@@ -34,7 +34,7 @@ public class Spaceship : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
 
-        if (Input.GetButton("Fire1") && delay > firerate)
+        if (Input.GetButton("Fire2") && delay > firerate)
         {
             Shoot();
         }
