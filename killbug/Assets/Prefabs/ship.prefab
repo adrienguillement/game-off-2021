@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7661331977233564243}
   - component: {fileID: 7661331977233564242}
   - component: {fileID: 7661331977233564245}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7661331977233564244}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071064, w: -0.7071072}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1.87, y: -3.4, z: 0}
   m_LocalScale: {x: 0.2898, y: 0.2898, z: 0.2898}
   m_Children:
@@ -330,10 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4703a15f404bc4185033684bed0f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5044010722386087482, guid: 4ccc1b59b4469e04a8d4a2369920b0de, type: 3}
-  explosion: {fileID: 5044010722386087482, guid: 4ccc1b59b4469e04a8d4a2369920b0de, type: 3}
-  speed: 2
-  delay: 0
+  bullet: {fileID: 8109720096702685338, guid: 03c00e28915b00c43b739cec3f63a839, type: 3}
+  explosion: {fileID: 8109720096702685338, guid: 03c00e28915b00c43b739cec3f63a839, type: 3}
+  speed: 10
+  delay: 1
+  firerate: 3
 --- !u!1 &7661331977358133164
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7661331977358133165}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: canonl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7661331979347649055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: canonr
   m_TagString: Untagged
   m_Icon: {fileID: 0}

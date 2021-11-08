@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-
+        Debug.Log(col.gameObject.tag);
 
         if (direction == 1)
         {
@@ -37,13 +37,13 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            if (col.gameObject.tag == "enemy")
+            if (col.gameObject.tag == "Enemy")
             {
                 col.gameObject.GetComponent<Enemy>().Damage();
                 Destroy(gameObject);
             }
 
-            if (col.gameObject.tag == "enemybullet")
+            if (col.gameObject.tag == "EnemyBullet")
             {
                 col.gameObject.GetComponent<Bullet>().Damage();
                 Destroy(gameObject);
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            if (col.gameObject.tag == "player")
+            if (col.gameObject.tag == "Player")
             {
                 col.gameObject.GetComponent<Spaceship>().Damage();
                 Destroy(gameObject);
