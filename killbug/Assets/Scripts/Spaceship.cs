@@ -9,17 +9,18 @@ public class Spaceship : MonoBehaviour
 
     public GameObject bullet, explosion;
     public float speed;
-    public int delay = 0;
-    public float firerate = 30;
+    
+    int delay = 0;
+    public float firerate;
 
     Rigidbody2D rb;
-    int health = 2;
+    public int health = 200;
 
     void Awake()
     {
+
         rb = GetComponent<Rigidbody2D>();
         canonl = transform.Find("canonl").gameObject;
-        canonr = transform.Find("canonr").gameObject;
     }
 
     void Start()
