@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8109720096702685338, guid: 62943150e76aeb84d8870c23b7eaa492, type: 3}
-  explosion: {fileID: 8109720096702685338, guid: 62943150e76aeb84d8870c23b7eaa492, type: 3}
   xSpeed: 0
   ySpeed: 1
   score: 1
