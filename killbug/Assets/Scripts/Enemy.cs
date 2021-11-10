@@ -70,8 +70,7 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
-        GameObject temp = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.identity);
-        temp.GetComponent<Bullet>().ChangeDirection();
+        Instantiate(bullet, canon.transform.position, Quaternion.identity);
     }
 
     void Die()

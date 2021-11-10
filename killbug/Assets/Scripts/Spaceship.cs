@@ -7,7 +7,7 @@ public class Spaceship : MonoBehaviour
 {
     GameObject canonl, canonr;
 
-    public GameObject bullet, explosion;
+    public GameObject bullet;/*, explosion*/
     public float speed;
     
     int delay = 0;
@@ -71,7 +71,7 @@ public class Spaceship : MonoBehaviour
 
     void Die()
     {
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        //Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject, 0.1f);
     }
 }
