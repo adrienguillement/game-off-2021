@@ -47,7 +47,6 @@ public class Spaceship : MonoBehaviour
     {
         delay = 0;
         Instantiate(bullet, canonl.transform.position, Quaternion.identity);
-        Instantiate(bullet, canonr.transform.position, Quaternion.identity);
     }
 
     public void Damage()

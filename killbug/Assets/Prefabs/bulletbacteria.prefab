@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
+  target: {fileID: 8967849452963137302, guid: d2da0fc864798e14f927cd2c8d5e295d, type: 3}
 --- !u!58 &4812842738970310622
 CircleCollider2D:
   m_ObjectHideFlags: 0
