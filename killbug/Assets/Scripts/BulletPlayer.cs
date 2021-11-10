@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BulletPlayer : MonoBehaviour
 {
-    Rigidbody2D rb;
-
     public int bulletSpeed = 10;
-    Vector2 directionShoot;
 
+    private Rigidbody2D rb;
+    private Vector2 directionShoot;
 
     void Awake()
     {
@@ -31,17 +30,11 @@ public class BulletPlayer : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (col.gameObject.tag == "Enemy")
+        else if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.GetComponent<Enemy>().Damage();
             Destroy(gameObject);
         }
 
     }
-
-    /*public void Damage()
-    {
-        Destroy(gameObject);
-    }*/
 }

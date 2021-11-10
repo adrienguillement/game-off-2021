@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-
-    GameObject player;
-    bool gameOver = false;
+    private GameObject player;
+    private bool gameOver = false;
 
     void Start()
     {

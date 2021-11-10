@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class CursorScript : MonoBehaviour
 {
-
-
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Score", 0);
         Cursor.visible = false;
     }
 

@@ -5,27 +5,19 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
-    GameObject canonl, canonr;
-
-    public GameObject bullet;/*, explosion*/
-    public float speed;
-    
-    int delay = 0;
-    public float firerate;
-
-    Rigidbody2D rb;
     public int health = 200;
+    public float firerate;
+    public GameObject bullet;
+    public float speed;
+
+    private GameObject canon;
+    private int delay = 0;
+    private Rigidbody2D rb;
 
     void Awake()
     {
-
         rb = GetComponent<Rigidbody2D>();
-        canonl = transform.Find("canonl").gameObject;
-    }
-
-    void Start()
-    {
-        
+        canon = transform.Find("canon").gameObject;
     }
 
     void Update()
@@ -46,7 +38,7 @@ public class Spaceship : MonoBehaviour
     void Shoot()
     {
         delay = 0;
-        Instantiate(bullet, canonl.transform.position, Quaternion.identity);
+        Instantiate(bullet, canon.transform.position, Quaternion.identity);
     }
 
     public void Damage()
@@ -71,7 +63,6 @@ public class Spaceship : MonoBehaviour
 
     void Die()
     {
-        //Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject, 0.1f);
     }
 }

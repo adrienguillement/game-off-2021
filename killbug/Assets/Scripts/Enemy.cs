@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public GameObject bullet, explosion;
-    GameObject canon;
-
+    public GameObject bullet;
     public float xSpeed, ySpeed;
     public int score;
-
     public bool canShoot;
     public float fireRate, health;
 
+    private Rigidbody2D rb;
+    private GameObject canon;
+    private GameObject player;
 
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         canon = transform.Find("canon").gameObject;
     }
@@ -27,13 +27,11 @@ public class Enemy : MonoBehaviour
 
         fireRate = fireRate + Random.Range(fireRate / -2, fireRate / 2);
         InvokeRepeating("Shoot", fireRate, fireRate);
-
     }
 
     void Update()
     {
         rb.velocity = new Vector2(xSpeed, ySpeed * -1);
-        
     }
 
     public void Damage()
@@ -45,7 +43,6 @@ public class Enemy : MonoBehaviour
         if(health == 0)
         {
             Die();
-           
         }
     }
 
@@ -70,13 +67,14 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bullet, canon.transform.position, Quaternion.identity);
+        if(player != null){
+            if(player.transform.position.y + 0.5 < gameObject.transform.position.y)
+                Instantiate(bullet, canon.transform.position, Quaternion.identity);
+        }
     }
 
     void Die()
     {
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
         Destroy(gameObject);
     }
 }

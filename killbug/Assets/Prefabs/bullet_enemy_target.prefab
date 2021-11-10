@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9191270031110466575}
   - component: {fileID: 8877964515442145788}
+  - component: {fileID: 3354478953079988385}
   - component: {fileID: 4812842738970310622}
   - component: {fileID: 4732178004862471270}
-  - component: {fileID: 4836692430260715276}
   m_Layer: 0
-  m_Name: bulletbacteria
-  m_TagString: Untagged
+  m_Name: bullet_enemy_target
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8109720096702685338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.9324, y: 1.6594, z: 0}
-  m_LocalScale: {x: 0.04046415, y: 0.04046415, z: 0.04046415}
+  m_LocalScale: {x: 0.10570572, y: 0.10570572, z: 0.10570572}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3354478953079988385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8109720096702685338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f6e89ebad03be4eb81f3ce208fea8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 3
+  target: {fileID: 4729144898679495300, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
 --- !u!58 &4812842738970310622
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -122,18 +136,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4836692430260715276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8109720096702685338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f6e89ebad03be4eb81f3ce208fea8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 10
-  transfor1: {fileID: 0}
-  target: {fileID: 0}

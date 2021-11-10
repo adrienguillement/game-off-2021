@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4729144898679495301}
   - component: {fileID: 3167095885031909012}
   m_Layer: 7
-  m_Name: ship2
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4729144898679495300}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0000019222496, w: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4273, y: -2.7327, z: 0}
   m_LocalScale: {x: 0.64764506, y: 0.64764506, z: 0.64764506}
   m_Children:
@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8109720096702685338, guid: 03c00e28915b00c43b739cec3f63a839, type: 3}
-  explosion: {fileID: 8109720096702685338, guid: 03c00e28915b00c43b739cec3f63a839, type: 3}
   speed: 10
   firerate: 60
+  health: 200
 --- !u!60 &3167095885031909012
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4729144898806652797}
   m_Layer: 7
-  m_Name: canonl
+  m_Name: canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour
 {
-    Rigidbody2D rb;
-
     public int bulletSpeed = 5;
-
-    public GameObject target;
-    Vector2 directionShoot;
-
+    
+    private GameObject target;
+    private Rigidbody2D rb;
+    private Vector2 directionShoot;
 
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
 
+        // Target player position if exist
         rb.velocity = ((target!= null ? target.transform.position : new Vector3(0,0,0)) - transform.position).normalized * bulletSpeed;
-    }
-
-    void Update()
-    {
-        
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -32,7 +26,7 @@ public class BulletEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (col.gameObject.tag == "Player")
+        else if (col.gameObject.tag == "Player")
         {
             col.gameObject.GetComponent<Spaceship>().Damage();
             Destroy(gameObject);
