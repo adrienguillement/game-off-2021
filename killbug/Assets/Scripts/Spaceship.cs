@@ -10,6 +10,7 @@ public class Spaceship : MonoBehaviour
     public GameObject bullet;
     public float speed;
 
+    private Vector2 mainCamera;
     private GameObject canon;
     private int delay = 0;
     private Rigidbody2D rb;
@@ -18,6 +19,7 @@ public class Spaceship : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         canon = transform.Find("canon").gameObject;
+        mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     void Update()
@@ -33,6 +35,34 @@ public class Spaceship : MonoBehaviour
         }
 
         delay++;
+
+        Teleport();
+        Bounds();
+
+    }
+
+    void Bounds()
+    {
+        if (gameObject.transform.position.y > mainCamera.y - 0.5f)
+        {
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x, mainCamera.y -0.5f);
+        }
+        else if (gameObject.transform.position.y < -mainCamera.y)
+        {
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x, -mainCamera.y);
+        }
+    }
+
+    void Teleport()
+    {
+        if (gameObject.transform.position.x > mainCamera.x)
+        {
+            gameObject.transform.position = new Vector2(-(gameObject.transform.position.x - 0.5f), gameObject.transform.position.y);
+        }
+        else if (gameObject.transform.position.x < -mainCamera.x)
+        {
+            gameObject.transform.position = new Vector2(-(gameObject.transform.position.x + 0.5f), gameObject.transform.position.y);
+        }
     }
 
     void Shoot()

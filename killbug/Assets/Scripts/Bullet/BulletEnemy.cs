@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour
 {
-    public int bulletSpeed = 5;
-    
-    private GameObject target;
+    public int bulletSpeed = 10;
+
     private Rigidbody2D rb;
     private Vector2 directionShoot;
 
     void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+    }
 
-        // Target player position if exist
-        rb.velocity = ((target!= null ? target.transform.position : new Vector3(0,0,0)) - transform.position).normalized * bulletSpeed;
+    void Update()
+    {
+        directionShoot = new Vector2(0, -1);
+        
+        rb.velocity = directionShoot * bulletSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
+
         // If bullet touch wall
-        if (col.gameObject.tag == "boundsbottom" || col.gameObject.tag == "Teleport")
+        if (col.gameObject.tag == "bounds")
         {
             Destroy(gameObject);
         }
@@ -31,10 +34,6 @@ public class BulletEnemy : MonoBehaviour
             col.gameObject.GetComponent<Spaceship>().Damage();
             Destroy(gameObject);
         }
-    }
 
-    public void Damage()
-    {
-        Destroy(gameObject);
     }
 }
