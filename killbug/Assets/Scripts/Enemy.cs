@@ -56,12 +56,11 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
             col.gameObject.GetComponent<Spaceship>().Damage();
-            Die();
         }
     }
 
