@@ -17,7 +17,6 @@ public class BulletPlayer : MonoBehaviour
     void Update()
     {
         directionShoot = new Vector2(0, 1);
-        Debug.Log(directionShoot);
         
         rb.velocity = directionShoot * bulletSpeed;
     }

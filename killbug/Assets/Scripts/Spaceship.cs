@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
-    public int health = 200;
+    public int health = 3;
+    public GameObject[] hearths;
+
     public float firerate;
     public GameObject bullet;
     public float speed;
@@ -20,6 +22,12 @@ public class Spaceship : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canon = transform.Find("canon").gameObject;
         mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        // Display right count of hearts "life"
+        for (int i = 0; i < health; i++)
+        {
+            hearths[i].gameObject.SetActive(true);
+        }
     }
 
     void Update()
@@ -74,12 +82,16 @@ public class Spaceship : MonoBehaviour
     public void Damage()
     {
         health--;
+
         StartCoroutine(Blink());
 
         if (health == 0)
         {
             Die();
         }
+
+        // UI - set hearth not visible
+        hearths[health].gameObject.SetActive(false); ;
     }
 
     IEnumerator Blink()

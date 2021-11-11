@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+        gameObject.transform.Rotate(0.0f, 0.0f, Random.Range(0.0f, 360.0f));
+
         canon = transform.Find("canon").gameObject;
     }
 
