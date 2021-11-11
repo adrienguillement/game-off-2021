@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 1611409834}
   - component: {fileID: 1611409836}
   m_Layer: 0
-  m_Name: Scripts
+  m_Name: SpawnEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -660,6 +660,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4637880040942210751, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27.47998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637880041454193220, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 124.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637880041454193220, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27.47998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637880041741891193, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27.47998
+      objectReference: {fileID: 0}
     - target: {fileID: 4637880041895856657, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
       propertyPath: m_Camera
       value: 
@@ -751,6 +767,18 @@ PrefabInstance:
     - target: {fileID: 4637880041895856662, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637880042385744255, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27.47998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637880042407305086, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 155.20007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637880042407305086, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 27.47998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
@@ -1175,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4729144898679495297, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.24
+      value: -2.01
       objectReference: {fileID: 0}
     - target: {fileID: 4729144898679495297, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
       propertyPath: m_LocalPosition.y

@@ -8,6 +8,13 @@ public class Spawn : MonoBehaviour
     public GameObject[] enemies;
     public int waves = 1;
 
+    private Vector2 mainCamera;
+
+    void Awake()
+    {
+        mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+    }
+
     void Start()
     {
         InvokeRepeating("SpawnEnemy", rate, rate);
@@ -17,7 +24,7 @@ public class Spawn : MonoBehaviour
     {
         for(int i=0; i<waves; i++)
         {
-            Instantiate(enemies[(int)Random.Range(0, enemies.Length)], new Vector3(Random.Range(-8f, 9f), 7, 0), Quaternion.identity);
+            Instantiate(enemies[(int)Random.Range(0, enemies.Length)], new Vector3(Random.Range(-mainCamera.x, mainCamera.x), mainCamera.y, 0), Quaternion.identity);
         }
     }
 }
