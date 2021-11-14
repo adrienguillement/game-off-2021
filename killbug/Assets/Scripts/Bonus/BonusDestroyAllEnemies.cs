@@ -23,6 +23,13 @@ public class BonusDestroyAllEnemies : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                Destroy(bullets[i], Random.Range(0.5f, 1.5f));
+            }
+
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             
             for(int i=0; i < enemies.Length; i++)
@@ -30,12 +37,6 @@ public class BonusDestroyAllEnemies : MonoBehaviour
                 Destroy(enemies[i], Random.Range(0.5f, 1.5f));
             }
 
-            GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-
-            for (int i = 0; i < bullets.Length; i++)
-            {
-                Destroy(bullets[i], Random.Range(0.5f, 1.5f));
-            }
 
             Destroy(gameObject);
         }
