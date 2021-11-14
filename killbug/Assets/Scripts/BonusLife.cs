@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddLife : MonoBehaviour
+public class BonusLife : MonoBehaviour
 {
     public float speed;
 

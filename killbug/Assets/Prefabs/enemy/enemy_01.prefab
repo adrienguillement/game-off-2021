@@ -151,13 +151,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8109720096702685338, guid: 4fbe529beec48cc4fb855495d817a728, type: 3}
   bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
+  bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
   xSpeed: 0
   ySpeed: 1.5
   score: 1
   canShoot: 1
   fireRate: 2.5
   health: 1
-  percentage_bonus_life: 100
+  percentageBonusLife: 20
+  percentageBonusTripleShoot: 80
+  percentageGetBonus: 90
 --- !u!58 &7528362614599981676
 CircleCollider2D:
   m_ObjectHideFlags: 0

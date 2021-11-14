@@ -6,19 +6,20 @@ public class BulletPlayer : MonoBehaviour
 {
     public int bulletSpeed = 10;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Vector2 directionShoot;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        directionShoot = new Vector2(0, 1);
+
+        rb.velocity = directionShoot * bulletSpeed;
     }
 
     void Update()
     {
-        directionShoot = new Vector2(0, 1);
-        
-        rb.velocity = directionShoot * bulletSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D col)

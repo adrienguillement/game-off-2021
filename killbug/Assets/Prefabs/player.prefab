@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4729144898679495299}
   - component: {fileID: 4729144898679495301}
   - component: {fileID: 3167095885031909012}
+  - component: {fileID: 2048151072}
   m_Layer: 7
   m_Name: player
   m_TagString: Player
@@ -119,10 +120,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4703a15f404bc4185033684bed0f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8109720096702685338, guid: 03c00e28915b00c43b739cec3f63a839, type: 3}
-  speed: 10
+  health: 3
+  hearths:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   firerate: 60
-  health: 200
+  bullet: {fileID: 8109720096702685338, guid: b9c5d450bd396f54dbe2ea0fd9361462, type: 3}
+  speed: 10
+  leftanim: {fileID: 2048151072}
 --- !u!60 &3167095885031909012
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -148,9 +156,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.16, y: -0.06}
-      - {x: 0.14, y: 0.06}
-      - {x: 0.35, y: 0.06}
+    - - {x: 0.16177183, y: -0.1466894}
+      - {x: 0.11810541, y: 0.038658038}
+      - {x: 0.19847552, y: 0.11659363}
       - {x: 0.59999996, y: 0.01}
       - {x: 0.74, y: -0.07}
       - {x: 0.95, y: -0.26}
@@ -189,18 +197,31 @@ PolygonCollider2D:
       - {x: -1.1, y: -0.24}
       - {x: -1.02, y: -0.25}
       - {x: -0.79999995, y: -0.06}
+      - {x: -0.51969993, y: 0.07357654}
       - {x: -0.25, y: 0.08}
       - {x: -0.19999999, y: 0.04}
       - {x: -0.25, y: -0.099999994}
       - {x: -0.19999999, y: -0.17}
-      - {x: -0.089999996, y: -0.32}
-      - {x: -0.08, y: -0.48}
-      - {x: -0.08, y: -1.04}
-      - {x: -0.06, y: -1.05}
-      - {x: -0.01, y: -1.05}
-      - {x: 0, y: -1.02}
-      - {x: 0.01, y: -0.34}
-      - {x: 0.14, y: -0.17}
+      - {x: -0.04768142, y: -0.288261}
+--- !u!95 &2048151072
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4729144898679495300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a685fe6f92c5c56459e45e44700f1d66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4729144898806652796
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4729144898806652796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.86, z: 0}
+  m_LocalPosition: {x: -0.037, y: 0.985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4729144898679495297}

@@ -12,10 +12,13 @@ public class Spaceship : MonoBehaviour
     public GameObject bullet;
     public float speed;
 
+    public Animator leftanim;
+
     private Vector2 mainCamera;
     private GameObject canon;
     private int delay = 0;
     private Rigidbody2D rb;
+    private bool isTripleShootActivated = false;
 
     void Awake()
     {
@@ -34,6 +37,8 @@ public class Spaceship : MonoBehaviour
     {
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         var verticalInput = Input.GetAxisRaw("Vertical");
+
+        leftanim.SetFloat("speed", horizontalInput * speed);
 
         rb.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
 
@@ -77,6 +82,15 @@ public class Spaceship : MonoBehaviour
     {
         delay = 0;
         Instantiate(bullet, canon.transform.position, Quaternion.identity);
+
+        if (isTripleShootActivated)
+        {
+            GameObject rightBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.identity);
+            rightBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 1) * 10;
+
+            GameObject leftBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.identity);
+            leftBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 1) * 10;
+        }
     }
 
     public void Damage()
@@ -112,5 +126,15 @@ public class Spaceship : MonoBehaviour
     {
         hearths[health].gameObject.SetActive(true);
         health++;
+    }
+
+    public void EnableTripleShoot()
+    {
+        isTripleShootActivated = true;
+    }
+
+    public void DisableTripleShoot()
+    {
+        isTripleShootActivated = false;
     }
 }
