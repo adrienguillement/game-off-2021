@@ -130,7 +130,7 @@ MonoBehaviour:
   firerate: 60
   bullet: {fileID: 8109720096702685338, guid: b9c5d450bd396f54dbe2ea0fd9361462, type: 3}
   speed: 10
-  leftanim: {fileID: 2048151072}
+  anim: {fileID: 2048151072}
 --- !u!60 &3167095885031909012
 PolygonCollider2D:
   m_ObjectHideFlags: 0

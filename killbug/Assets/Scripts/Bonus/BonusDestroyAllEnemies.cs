@@ -27,14 +27,14 @@ public class BonusDestroyAllEnemies : MonoBehaviour
             
             for(int i=0; i < enemies.Length; i++)
             {
-                Destroy(enemies[i]);
+                Destroy(enemies[i], Random.Range(0.5f, 1.5f));
             }
 
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
             for (int i = 0; i < bullets.Length; i++)
             {
-                Destroy(bullets[i]);
+                Destroy(bullets[i], Random.Range(0.5f, 1.5f));
             }
 
             Destroy(gameObject);
