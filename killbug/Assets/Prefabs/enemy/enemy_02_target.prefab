@@ -157,6 +157,7 @@ MonoBehaviour:
   canShoot: 1
   fireRate: 1.5
   health: 3
+  percentage_bonus_life: 100
 --- !u!58 &7679790709628838749
 CircleCollider2D:
   m_ObjectHideFlags: 0

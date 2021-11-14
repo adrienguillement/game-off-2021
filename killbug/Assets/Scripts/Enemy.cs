@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int score;
     public bool canShoot;
     public float fireRate, health;
+    public int percentageBonusLife = 20;
 
     private Rigidbody2D rb;
     private GameObject canon;
@@ -76,7 +77,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        if ((int)Random.Range(0, 3) == 0)
+        if ((int)Random.Range(0, 100) < percentageBonusLife)
         {
             Instantiate(bonusLife, transform.position, Quaternion.identity);
         }
