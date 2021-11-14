@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8109720096702685338, guid: 4fbe529beec48cc4fb855495d817a728, type: 3}
+  bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
   xSpeed: 0
   ySpeed: 1.5
   score: 1

@@ -91,7 +91,7 @@ public class Spaceship : MonoBehaviour
         }
 
         // UI - set hearth not visible
-        hearths[health].gameObject.SetActive(false); ;
+        hearths[health].gameObject.SetActive(false);
     }
 
     IEnumerator Blink()
@@ -106,5 +106,11 @@ public class Spaceship : MonoBehaviour
     void Die()
     {
         Destroy(gameObject, 0.1f);
+    }
+
+    public void AddHealth()
+    {
+        hearths[health].gameObject.SetActive(true);
+        health++;
     }
 }

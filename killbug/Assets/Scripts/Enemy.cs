@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject bullet, bonusLife;
     public float xSpeed, ySpeed;
     public int score;
     public bool canShoot;
@@ -76,6 +76,10 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        if ((int)Random.Range(0, 3) == 0)
+        {
+            Instantiate(bonusLife, transform.position, Quaternion.identity);
+        }
         ScoreScript.scoreValue += score;
         Destroy(gameObject);
     }
