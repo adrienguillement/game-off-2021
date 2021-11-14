@@ -12,7 +12,7 @@ public class Spaceship : MonoBehaviour
     public GameObject bullet;
     public float speed;
 
-    public Animator leftanim;
+    public Animator anim;
 
     private Vector2 mainCamera;
     private GameObject canon;
@@ -38,7 +38,7 @@ public class Spaceship : MonoBehaviour
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         var verticalInput = Input.GetAxisRaw("Vertical");
 
-        leftanim.SetFloat("speed", horizontalInput * speed);
+        anim.SetFloat("speed", horizontalInput * speed);
 
         rb.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
 
