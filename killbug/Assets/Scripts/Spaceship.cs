@@ -8,6 +8,9 @@ public class Spaceship : MonoBehaviour
     public int health = 3;
     public GameObject[] hearths;
 
+    public bool isShieldActivated = false;
+    public float shieldDuration = 5f;
+
     public float firerate;
     public GameObject bullet;
     public float speed;
@@ -19,6 +22,8 @@ public class Spaceship : MonoBehaviour
     private int delay = 0;
     private Rigidbody2D rb;
     private bool isTripleShootActivated = false;
+    private float shieldDurationTmp;
+
 
     void Awake()
     {
@@ -31,6 +36,9 @@ public class Spaceship : MonoBehaviour
         {
             hearths[i].gameObject.SetActive(true);
         }
+
+
+        shieldDurationTmp = shieldDuration;
     }
 
     void Update()
@@ -45,6 +53,21 @@ public class Spaceship : MonoBehaviour
         if (Input.GetButton("Fire2") && delay > firerate)
         {
             Shoot();
+        }
+
+        if (isShieldActivated)
+        {
+           if (shieldDurationTmp > 0)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(0, 0, 1);
+                shieldDurationTmp -= Time.deltaTime;
+            }
+            else
+            {
+                shieldDurationTmp = shieldDuration;
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+                isShieldActivated = false;
+            }
         }
 
         delay++;
@@ -95,6 +118,13 @@ public class Spaceship : MonoBehaviour
 
     public void Damage()
     {
+        if (isShieldActivated)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+            isShieldActivated = false;
+            return;
+        }
+
         health--;
 
         StartCoroutine(Blink());

@@ -552,11 +552,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2048151072 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2048151072, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
-  m_PrefabInstance: {fileID: 7570712297849992567}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2613296578557879086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,10 +869,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 4729144898679495301, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 2048151072}
     - target: {fileID: 4729144898679495301, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
       propertyPath: hearths.Array.data[0]
       value: 

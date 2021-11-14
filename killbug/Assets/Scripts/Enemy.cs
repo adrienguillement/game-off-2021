@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject bullet, bonusLife, bonusTripleShot, bonusDestroyAllEnemies;
+    public GameObject bullet, bonusLife, bonusTripleShot, bonusDestroyAllEnemies, bonusShield;
     public float xSpeed, ySpeed;
     public int score;
     public bool canShoot;
     public float fireRate, health;
 
     public int percentageBonusLife = 10;
-    public int percentageBonusTripleShoot = 10;
-    public int percentageBonusDestroyAllEnemies = 80;
+    public int percentageBonusTripleShoot = 5;
+    public int percentageBonusDestroyAllEnemies = 5;
+    public int percentageBonusShield = 80;
     public int percentageGetBonus = 20;
 
     private Rigidbody2D rb;
@@ -98,6 +99,10 @@ public class Enemy : MonoBehaviour
             else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot + percentageBonusDestroyAllEnemies)
             {
                 Instantiate(bonusDestroyAllEnemies, transform.position, Quaternion.identity);
+            }
+            else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot + percentageBonusDestroyAllEnemies + percentageBonusShield)
+            {
+                Instantiate(bonusShield, transform.position, Quaternion.identity);
             }
         }
         ScoreScript.scoreValue += score;

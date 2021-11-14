@@ -153,6 +153,7 @@ MonoBehaviour:
   bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
   bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
   bonusDestroyAllEnemies: {fileID: 99724856640952583, guid: b950b464b7eaef44ba76a77ddb6e9aa4, type: 3}
+  bonusShield: {fileID: 99724856640952583, guid: 7ffc0e275112c69479a87e5f9545a758, type: 3}
   xSpeed: 0
   ySpeed: 1.5
   score: 1
@@ -160,8 +161,9 @@ MonoBehaviour:
   fireRate: 2.5
   health: 1
   percentageBonusLife: 10
-  percentageBonusTripleShoot: 10
-  percentageBonusDestroyAllEnemies: 80
+  percentageBonusTripleShoot: 5
+  percentageBonusDestroyAllEnemies: 5
+  percentageBonusShield: 80
   percentageGetBonus: 90
 --- !u!58 &7528362614599981676
 CircleCollider2D:
