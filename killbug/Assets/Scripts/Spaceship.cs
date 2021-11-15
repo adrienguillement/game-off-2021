@@ -10,8 +10,8 @@ public class Spaceship : MonoBehaviour
 
     public bool isShieldActivated = false;
     public float shieldDuration = 5f;
-    public GameObject shield;
-    private bool isShieldSpawn = false;
+    public GameObject shieldPrefab;
+    private GameObject shield;
 
     public bool isTripleShootActivated = false;
     public float tripleShootDuration = 5f;
@@ -64,23 +64,20 @@ public class Spaceship : MonoBehaviour
         if (isShieldActivated)
         {
 
-            if (!isShieldSpawn)
+            if (shield == null)
             {
-
-                isShieldSpawn = true;
-                var shieldSprite = Instantiate(shield, transform.position, gameObject.transform.rotation);
-                shieldSprite.transform.parent = gameObject.transform;
+                shield = Instantiate(shieldPrefab, transform.position, gameObject.transform.rotation);
+                shield.transform.parent = gameObject.transform;
             }
 
             if (shieldDurationTmp > 0)
             {
                 shieldDurationTmp -= Time.deltaTime;
+                // Change shield color -> 1f
             }
             else
             {
-                isShieldSpawn = false;
-                shieldDurationTmp = shieldDuration;
-                isShieldActivated = false;
+                ResetShield();
             }
         }
 
@@ -145,10 +142,9 @@ public class Spaceship : MonoBehaviour
 
     public void Damage()
     {
-        if (isShieldActivated)
+        if (shield != null)
         {
-            Destroy(shield.gameObject);
-            isShieldActivated = false;
+            ResetShield();
             return;
         }
 
@@ -183,6 +179,13 @@ public class Spaceship : MonoBehaviour
     {
         hearths[health].gameObject.SetActive(true);
         health++;
+    }
+
+    private void ResetShield()
+    {
+        ResetShieldDurationTmp();
+        isShieldActivated = false;
+        Destroy(shield);
     }
 
     public void ResetShieldDurationTmp()
