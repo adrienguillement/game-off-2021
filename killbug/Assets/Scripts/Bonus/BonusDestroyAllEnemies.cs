@@ -6,6 +6,8 @@ public class BonusDestroyAllEnemies : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D rb;
+    public ParticleSystem shockwave;
+    private bool isPlaying = false;
 
 
     void Awake()
@@ -14,15 +16,31 @@ public class BonusDestroyAllEnemies : MonoBehaviour
         
     }
 
+    void Start()
+    {
+        Debug.Log("Start");
+        //shockwave = GetComponent<ParticleSystem>();
+        shockwave.Clear();    // Reset the particles
+    }
+
     void Update()
     {
+        Debug.Log("Update");
         rb.velocity = new Vector2(0, -1) * speed;
+        if (!isPlaying)
+        {
+            Debug.Log("isPlaying");
+            shockwave.Play();
+            isPlaying = true;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
+            Debug.Log("Killing");
+            //If(!shockwave.isPlaying) shockwave.Play();
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
             for (int i = 0; i < bullets.Length; i++)

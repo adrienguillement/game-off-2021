@@ -161,8 +161,8 @@ MonoBehaviour:
   fireRate: 2.5
   health: 1
   percentageBonusLife: 10
-  percentageBonusTripleShoot: 80
-  percentageBonusDestroyAllEnemies: 5
+  percentageBonusTripleShoot: 5
+  percentageBonusDestroyAllEnemies: 80
   percentageBonusShield: 5
   percentageGetBonus: 90
 --- !u!58 &7528362614599981676
