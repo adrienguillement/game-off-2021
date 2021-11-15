@@ -11,6 +11,9 @@ public class Spaceship : MonoBehaviour
     public bool isShieldActivated = false;
     public float shieldDuration = 5f;
 
+    public bool isTripleShootActivated = false;
+    public float tripleShootDuration = 5f;
+
     public float firerate;
     public GameObject bullet;
     public float speed;
@@ -21,8 +24,8 @@ public class Spaceship : MonoBehaviour
     private GameObject canon;
     private int delay = 0;
     private Rigidbody2D rb;
-    private bool isTripleShootActivated = false;
-    private float shieldDurationTmp;
+
+    private float shieldDurationTmp, tripleShootDurationTmp;
 
 
     void Awake()
@@ -39,6 +42,7 @@ public class Spaceship : MonoBehaviour
 
 
         shieldDurationTmp = shieldDuration;
+        tripleShootDuration = tripleShootDuration;
     }
 
     void Update()
@@ -67,6 +71,19 @@ public class Spaceship : MonoBehaviour
                 shieldDurationTmp = shieldDuration;
                 GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
                 isShieldActivated = false;
+            }
+        }
+
+        if (isTripleShootActivated)
+        {
+            if (tripleShootDurationTmp > 0)
+            {
+                tripleShootDurationTmp -= Time.deltaTime;
+            }
+            else
+            {
+                tripleShootDurationTmp = tripleShootDuration;
+                isTripleShootActivated = false;
             }
         }
 
@@ -158,13 +175,13 @@ public class Spaceship : MonoBehaviour
         health++;
     }
 
-    public void EnableTripleShoot()
+    public void ResetShieldDurationTmp()
     {
-        isTripleShootActivated = true;
+        shieldDurationTmp = shieldDuration;
     }
 
-    public void DisableTripleShoot()
+    public void ResetTripleShootDurationTmp()
     {
-        isTripleShootActivated = false;
+        tripleShootDurationTmp = tripleShootDuration;
     }
 }

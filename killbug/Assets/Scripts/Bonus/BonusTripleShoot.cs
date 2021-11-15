@@ -5,7 +5,6 @@ using UnityEngine;
 public class BonusTripleShoot : MonoBehaviour
 {
     public float speed;
-    public float durationMax = 5;
 
     private Rigidbody2D rb;
     private GameObject player;
@@ -18,24 +17,13 @@ public class BonusTripleShoot : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void Update()
-    {
-        if(durationMax > 0)
-        {
-            durationMax -= Time.deltaTime;
-        }
-        else
-        {
-            player.GetComponent<Spaceship>().DisableTripleShoot();
-        }
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            durationMax = 0;
-            col.gameObject.GetComponent<Spaceship>().EnableTripleShoot();
+
+            col.gameObject.GetComponent<Spaceship>().ResetTripleShootDurationTmp();
+            col.gameObject.GetComponent<Spaceship>().isTripleShootActivated = true;
             Destroy(gameObject);
         }
     }

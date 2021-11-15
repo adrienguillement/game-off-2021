@@ -26,6 +26,7 @@ public class BonusShield     : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            col.gameObject.GetComponent<Spaceship>().ResetShieldDurationTmp();
             col.gameObject.GetComponent<Spaceship>().isShieldActivated = true;
             Destroy(gameObject);
         }
