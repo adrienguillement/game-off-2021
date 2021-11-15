@@ -28,7 +28,7 @@ public class Spaceship : MonoBehaviour
     private Rigidbody2D rb;
 
     private float shieldDurationTmp, tripleShootDurationTmp;
-
+    private Color lerpedColorShield = Color.white;
 
     void Awake()
     {
@@ -63,7 +63,7 @@ public class Spaceship : MonoBehaviour
 
         if (isShieldActivated)
         {
-
+            Debug.Log(shieldDurationTmp);
             if (shield == null)
             {
                 shield = Instantiate(shieldPrefab, transform.position, gameObject.transform.rotation);
@@ -72,6 +72,13 @@ public class Spaceship : MonoBehaviour
 
             if (shieldDurationTmp > 0)
             {
+                if (shieldDurationTmp < 1.5f)
+                {
+                    var shieldRenderer = shield.GetComponent<Renderer>();
+
+                    lerpedColorShield = Color.Lerp(Color.white, new Color(shieldRenderer.material.color.r, shieldRenderer.material.color.g, shieldRenderer.material.color.b, 0f), Mathf.PingPong(Time.time * 10, 1));
+                    shieldRenderer.GetComponent<Renderer>().material.SetColor("_Color", lerpedColorShield);
+                }
                 shieldDurationTmp -= Time.deltaTime;
                 // Change shield color -> 1f
             }
