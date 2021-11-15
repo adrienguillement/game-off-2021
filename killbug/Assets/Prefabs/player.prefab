@@ -127,6 +127,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isShieldActivated: 1
+  shieldDuration: 5
+  shield: {fileID: 6178481757593958057, guid: 2095c97b788b71c4a892617c9a2f765e, type: 3}
+  isTripleShootActivated: 0
+  tripleShootDuration: 5
   firerate: 60
   bullet: {fileID: 8109720096702685338, guid: b9c5d450bd396f54dbe2ea0fd9361462, type: 3}
   speed: 10
