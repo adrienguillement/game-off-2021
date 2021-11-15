@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  shockwave: {fileID: 395527530546442101, guid: 84b22ba0287183d498221b24862502b6, type: 3}
+  shockwave: {fileID: 556778849415750191, guid: 84b22ba0287183d498221b24862502b6, type: 3}
