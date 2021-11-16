@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     private GameObject canon;
     private GameObject player;
 
+    private bool isShooting = false;
+
+    private Vector2 mainCamera;
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,19 +31,31 @@ public class Enemy : MonoBehaviour
         gameObject.transform.Rotate(0.0f, 0.0f, Random.Range(0.0f, 360.0f));
 
         canon = transform.Find("canon").gameObject;
+
+        mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     void Start()
     {
+        Level.instance.AddEnemy();
+
         if (!canShoot) return;
 
         fireRate = fireRate + Random.Range(fireRate / -2, fireRate / 2);
-        InvokeRepeating("Shoot", fireRate, fireRate);
     }
 
     void Update()
     {
         rb.velocity = new Vector2(xSpeed, ySpeed * -1);
+
+        if(gameObject.transform.position.y < mainCamera.y)
+        {
+            if (!isShooting)
+            {
+                isShooting = true;
+                InvokeRepeating("Shoot", fireRate, fireRate);
+            }
+        }
     }
 
     public void Damage()
@@ -106,6 +122,15 @@ public class Enemy : MonoBehaviour
             }
         }
         ScoreScript.scoreValue += score;
+
+
+        Level.instance.RemoveEnemy();
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+
+        Level.instance.RemoveEnemy();
     }
 }

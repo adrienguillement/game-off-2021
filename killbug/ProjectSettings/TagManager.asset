@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - EnemyBullet
   - Teleport
+  - killzonetop
+  - bulletPlayer
   layers:
   - Default
   - TransparentFX

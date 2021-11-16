@@ -42,7 +42,10 @@ public class BonusDestroyAllEnemies : MonoBehaviour
             
             for(int i=0; i < enemies.Length; i++)
             {
-                Destroy(enemies[i], Random.Range(0.5f, 1.5f));
+
+                Debug.Log(enemies[i].GetComponent<Renderer>().isVisible);
+                if (enemies[i].GetComponent<Renderer>().isVisible)
+                    Destroy(enemies[i], Random.Range(0.5f, 1.5f));
             }
 
             Destroy(gameObject);
