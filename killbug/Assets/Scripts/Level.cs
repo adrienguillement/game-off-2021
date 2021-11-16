@@ -11,7 +11,7 @@ public class Level : MonoBehaviour
     private bool startNextLevel = false;
     private float nextLevelTimer = 3f;
 
-    private string[] levels = { "Level01", "Level02" };
+    private string[] levels = { "Level01", "LevelSelection" };
     int currentLevel = 1;
 
     private void Awake()
@@ -59,6 +59,7 @@ public class Level : MonoBehaviour
 
         if (numEnemies == 0)
         {
+            ScoreManager.SetScore(Random.Range(0,3));
             startNextLevel = true;
         }
     }
