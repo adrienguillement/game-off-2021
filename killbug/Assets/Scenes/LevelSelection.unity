@@ -574,6 +574,7 @@ MonoBehaviour:
   - {fileID: 1287327490}
   - {fileID: 1885118308}
   - {fileID: 1337327607}
+  starSprite: {fileID: 2747690628134850419, guid: aed1b78fc422acf428fcd50271cc1447, type: 3}
 --- !u!1 &725651020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,7 @@ MonoBehaviour:
   - {fileID: 957201264}
   - {fileID: 1735077759}
   - {fileID: 1158899904}
+  starSprite: {fileID: 2747690628134850419, guid: aed1b78fc422acf428fcd50271cc1447, type: 3}
 --- !u!114 &1531367551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1207,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level01
+          m_StringArgument: Level02
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1531367552

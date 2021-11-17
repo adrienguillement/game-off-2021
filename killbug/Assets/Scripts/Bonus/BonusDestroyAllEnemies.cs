@@ -29,7 +29,6 @@ public class BonusDestroyAllEnemies : MonoBehaviour
 
             Instantiate(shockwave, transform.position, Quaternion.identity);
 
-            Debug.Log("Killing");
             //If(!shockwave.isPlaying) shockwave.Play();
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
@@ -42,8 +41,6 @@ public class BonusDestroyAllEnemies : MonoBehaviour
             
             for(int i=0; i < enemies.Length; i++)
             {
-
-                Debug.Log(enemies[i].GetComponent<Renderer>().isVisible);
                 if (enemies[i].GetComponent<Renderer>().isVisible)
                     Destroy(enemies[i], Random.Range(0.5f, 1.5f));
             }

@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
     public static Level instance;
+    public GameObject scoreScript;
+    public int scoreMax;
 
     private int numEnemies = 0;
+
     private bool startNextLevel = false;
     private float nextLevelTimer = 3f;
+    private ScoreManager scoreManager;
 
     private string[] levels = { "Level01", "LevelSelection" };
     int currentLevel = 1;
@@ -17,10 +21,13 @@ public class Level : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        scoreManager = (ScoreManager)gameObject.GetComponent(typeof(ScoreManager));
     }
 
     void Update()
     {
+
         if (startNextLevel)
         {
             if (nextLevelTimer <= 0)
@@ -29,7 +36,6 @@ public class Level : MonoBehaviour
 
                 if (currentLevel <= levels.Length)
                 {
-                    Debug.Log(numEnemies);
                     string sceneName = levels[currentLevel - 1];
                     SceneManager.LoadScene(sceneName);
                 }
@@ -45,6 +51,7 @@ public class Level : MonoBehaviour
                 nextLevelTimer -= Time.deltaTime;
             }
         }
+        
 
     }
 
@@ -59,7 +66,20 @@ public class Level : MonoBehaviour
 
         if (numEnemies == 0)
         {
-            ScoreManager.SetScore(Random.Range(0,3));
+            var finalScore = scoreScript.GetComponent<ScoreScript>().scoreValue;
+
+            if (finalScore > 0)
+            {
+                scoreManager.SetScore(1);
+            }
+            if (finalScore > Mathf.Ceil((float)scoreMax / 2) && finalScore < scoreMax)
+            {
+                scoreManager.SetScore(2);
+            }
+            if (finalScore >= scoreMax)
+            {
+                scoreManager.SetScore(3);
+            }
             startNextLevel = true;
         }
     }

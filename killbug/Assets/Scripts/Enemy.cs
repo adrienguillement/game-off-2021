@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject canon;
     private GameObject player;
+    private ScoreScript scoreScript;
 
     private bool isShooting = false;
 
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        scoreScript = GameObject.Find("ScoreScript").GetComponent<ScoreScript>();
         Level.instance.AddEnemy();
 
         if (!canShoot) return;
@@ -98,6 +100,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        scoreScript.scoreValue += score;
+
         int randomNumber = (int)Random.Range(0, 101);
 
         if (randomNumber < percentageGetBonus)
@@ -121,16 +125,12 @@ public class Enemy : MonoBehaviour
                 Instantiate(bonusShield, transform.position, Quaternion.identity);
             }
         }
-        ScoreScript.scoreValue += score;
 
-
-        Level.instance.RemoveEnemy();
         Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-
         Level.instance.RemoveEnemy();
     }
 }

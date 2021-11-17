@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    static int levelIndex;
+    public int levelIndex;
 
-    public static void SetScore(int starsNum)
+    public void SetScore(int starsNum)
     {
-        if (starsNum > PlayerPrefs.GetInt("Lv" + levelIndex))
-        {
-            PlayerPrefs.SetInt("Lv" + levelIndex, starsNum);
-        }
+        PlayerPrefs.SetInt("Lv" + levelIndex, starsNum);
+
     }
 }
