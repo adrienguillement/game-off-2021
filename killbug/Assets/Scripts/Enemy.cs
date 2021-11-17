@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject bullet, bonusLife, bonusTripleShot, bonusDestroyAllEnemies, bonusShield;
+    public GameObject malusAlzheimer;
     public float xSpeed, ySpeed;
     public int score;
     public bool canShoot;
@@ -14,7 +15,10 @@ public class Enemy : MonoBehaviour
     public int percentageBonusTripleShoot = 5;
     public int percentageBonusDestroyAllEnemies = 5;
     public int percentageBonusShield = 80;
-    public int percentageGetBonus = 20;
+
+    public int percentageMalusAlzheimer = 100;
+
+    public int percentageGetSomething = 20;
 
     private Rigidbody2D rb;
     private GameObject canon;
@@ -104,25 +108,40 @@ public class Enemy : MonoBehaviour
 
         int randomNumber = (int)Random.Range(0, 101);
 
-        if (randomNumber < percentageGetBonus)
+        if (randomNumber < percentageGetSomething)
         {
-            int randomBonusNumber = (int)Random.Range(0, 101);
+            int randomBonusOrMalusNumber = (int)Random.Range(0, 2);
 
-            if(randomBonusNumber > 0 && randomBonusNumber <= percentageBonusLife)
+            if(randomBonusOrMalusNumber == 0) // spawn bonus
             {
-                Instantiate(bonusLife, transform.position, Quaternion.identity);
+
+                int randomBonusNumber = (int)Random.Range(0, 101);
+
+                if (randomBonusNumber > 0 && randomBonusNumber <= percentageBonusLife)
+                {
+                    Instantiate(bonusLife, transform.position, Quaternion.identity);
+                }
+                else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot)
+                {
+                    Instantiate(bonusTripleShot, transform.position, Quaternion.identity);
+                }
+                else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot + percentageBonusDestroyAllEnemies)
+                {
+                    Instantiate(bonusDestroyAllEnemies, transform.position, Quaternion.identity);
+                }
+                else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot + percentageBonusDestroyAllEnemies + percentageBonusShield)
+                {
+                    Instantiate(bonusShield, transform.position, Quaternion.identity);
+                }
             }
-            else if(randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot)
+            else
             {
-                Instantiate(bonusTripleShot, transform.position, Quaternion.identity);
-            }
-            else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot + percentageBonusDestroyAllEnemies)
-            {
-                Instantiate(bonusDestroyAllEnemies, transform.position, Quaternion.identity);
-            }
-            else if (randomBonusNumber > percentageBonusLife && randomBonusNumber <= percentageBonusLife + percentageBonusTripleShoot + percentageBonusDestroyAllEnemies + percentageBonusShield)
-            {
-                Instantiate(bonusShield, transform.position, Quaternion.identity);
+                int randomMalusNumber = (int)Random.Range(0, 101);
+
+                if (randomMalusNumber > 0 && randomMalusNumber <= percentageMalusAlzheimer)
+                {
+                    Instantiate(malusAlzheimer, transform.position, Quaternion.identity);
+                }
             }
         }
 
