@@ -44,7 +44,7 @@ public class Spaceship : MonoBehaviour
 
 
         shieldDurationTmp = shieldDuration;
-        tripleShootDuration = tripleShootDuration;
+        tripleShootDurationTmp = tripleShootDuration;
     }
 
     void Update()

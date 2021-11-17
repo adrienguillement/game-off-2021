@@ -129,6 +129,17 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void OneShot()
+    {
+        StartCoroutine(DestroyDelay());
+    }
+
+    private IEnumerator DestroyDelay()
+    {
+        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
+        Die();
+    }
+
     private void OnDestroy()
     {
         Level.instance.RemoveEnemy();
