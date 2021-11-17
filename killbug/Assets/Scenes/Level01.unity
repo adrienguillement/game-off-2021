@@ -147,14 +147,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114654587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.48, z: -28.156843}
+  m_LocalPosition: {x: -4.51, y: -0.48, z: -28.156843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 434854320}
   - {fileID: 1869721234}
   - {fileID: 208413666}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &139331816
 PrefabInstance:
@@ -991,7 +991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6840266174414877272, guid: 8c9d222e176f0934a8f08f5045356ce2, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6840266174414877272, guid: 8c9d222e176f0934a8f08f5045356ce2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1093,6 +1093,10 @@ PrefabInstance:
     - target: {fileID: 4729144898679495300, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729144898679495301, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
+      propertyPath: isAlzheimerActivated
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4729144898679495301, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
       propertyPath: hearths.Array.data[0]

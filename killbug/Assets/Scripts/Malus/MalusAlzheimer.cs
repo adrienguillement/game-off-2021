@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusShield     : MonoBehaviour
+public class MalusAlzheimer : MonoBehaviour
 {
     public float speed;
 
@@ -18,8 +18,8 @@ public class BonusShield     : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.GetComponent<Spaceship>().ResetShield();
-            col.gameObject.GetComponent<Spaceship>().isShieldActivated = true;
+            col.gameObject.GetComponent<Spaceship>().ResetAlzheimerDurationTmp();
+            col.gameObject.GetComponent<Spaceship>().isAlzheimerActivated = true;
             Destroy(gameObject);
         }
     }

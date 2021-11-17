@@ -13,6 +13,9 @@ public class Spaceship : MonoBehaviour
     public GameObject shieldPrefab;
     private GameObject shield;
 
+    public bool isAlzheimerActivated = false;
+    public float alzheimerDuration = 5f;
+
     public bool isTripleShootActivated = false;
     public float tripleShootDuration = 5f;
 
@@ -21,13 +24,12 @@ public class Spaceship : MonoBehaviour
     public float speed;
 
     public Animator anim;
-
     private Vector2 mainCamera;
     private GameObject canon;
     private int delay = 0;
     private Rigidbody2D rb;
 
-    private float shieldDurationTmp, tripleShootDurationTmp;
+    private float shieldDurationTmp, tripleShootDurationTmp, alzheimerDurationTmp;
     private Color lerpedColorShield = Color.white;
 
     void Awake()
@@ -50,7 +52,24 @@ public class Spaceship : MonoBehaviour
     void Update()
     {
         var horizontalInput = Input.GetAxisRaw("Horizontal");
-        var verticalInput = Input.GetAxisRaw("Vertical");
+        var verticalInput = 0f;
+
+        if (isAlzheimerActivated)
+        {
+            if (alzheimerDurationTmp > 0)
+            {
+                alzheimerDurationTmp -= Time.deltaTime;
+            }
+            else
+            {
+                isAlzheimerActivated = false;
+                alzheimerDurationTmp = alzheimerDuration;
+            }
+        }
+        else
+        {
+            verticalInput = Input.GetAxisRaw("Vertical");
+        }
 
         anim.SetFloat("speed", horizontalInput * speed);
 
@@ -188,7 +207,7 @@ public class Spaceship : MonoBehaviour
         health++;
     }
 
-    private void ResetShield()
+    public void ResetShield()
     {
         ResetShieldDurationTmp();
         isShieldActivated = false;
@@ -203,5 +222,10 @@ public class Spaceship : MonoBehaviour
     public void ResetTripleShootDurationTmp()
     {
         tripleShootDurationTmp = tripleShootDuration;
+    }
+
+    public void ResetAlzheimerDurationTmp()
+    {
+        alzheimerDurationTmp = alzheimerDuration;
     }
 }
