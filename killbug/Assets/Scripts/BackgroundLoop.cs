@@ -6,7 +6,7 @@ public class BackgroundLoop : MonoBehaviour
 {
 	public float scrollSpeed;
 	public float scrollOffset;
-	Vector2 startPos;
+	Vector3 startPos;
 
 	float newPos;
 
@@ -19,6 +19,6 @@ public class BackgroundLoop : MonoBehaviour
 	{
 		newPos = Mathf.Repeat(Time.time * -scrollSpeed, scrollOffset);
 
-		transform.position = startPos + Vector2.up * newPos;
+		transform.position = startPos + Vector3.up * newPos;
 	}
 }
