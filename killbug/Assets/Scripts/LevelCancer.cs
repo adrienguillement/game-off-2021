@@ -15,6 +15,8 @@ public class LevelCancer : MonoBehaviour
     public int timeToKill;
 
     private int numEnemies = 0;
+    private int numEnemiesKills = 0;
+    private int numEnemiesSpawn = 0;
     private int maxEnnemies = 16;
 
     private bool startNextLevel = false;
@@ -67,32 +69,36 @@ public class LevelCancer : MonoBehaviour
     public void AddEnemy()
     {
         numEnemies++;
+        numEnemiesSpawn++;
     }
 
-    public void RemoveEnemy()
+    public void RemoveEnemy(bool isPlayerKill)
     {
-        Debug.Log("jreger");
         numEnemies--;
 
-        Instantiate(enemyCancer, new Vector2(0, 10), Quaternion.identity);
-        Instantiate(enemyCancer, new Vector2(5, 5), Quaternion.identity);
+        if (isPlayerKill)
+        {
+            numEnemiesKills++;
+
+            Debug.Log("______");
+            Debug.Log("Num Ennemies Spawn : " + numEnemiesSpawn);
+
+            Debug.Log("Can spawn : " + (numEnemiesSpawn <= maxEnnemies).ToString());
+
+            if (numEnemiesSpawn + 1 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(0, 5), Quaternion.identity);
+            if (numEnemiesSpawn + 2 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(5, 5), Quaternion.identity);
+            Debug.Log("______");
+        }
 
         if (numEnemies == 0)
         {
-            var finalScore = scoreScript.GetComponent<ScoreScript>().scoreValue;
-
-            if (finalScore > 0)
-            {
-                scoreManager.SetScore(1);
-            }
-            if (finalScore > Mathf.Ceil((float)scoreMax / 2) && finalScore < scoreMax)
-            {
-                scoreManager.SetScore(2);
-            }
-            if (finalScore >= scoreMax)
-            {
+            if (numEnemiesKills >= maxEnnemies) 
                 scoreManager.SetScore(3);
-            }
+            else if (numEnemiesKills > Mathf.Ceil((float)maxEnnemies / 2) && numEnemiesKills < maxEnnemies)
+                scoreManager.SetScore(2);
+            else if (numEnemiesKills > 0)
+                scoreManager.SetScore(1);
+
             startNextLevel = true;
         }
     }

@@ -6,7 +6,7 @@ public class KillzoneTop : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player" || col.gameObject.tag == "bulletPlayer")
+        if (col.gameObject.tag == "bulletPlayer")
         {
             Destroy(col.gameObject);
         }

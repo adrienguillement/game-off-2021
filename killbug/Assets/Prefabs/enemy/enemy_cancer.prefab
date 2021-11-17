@@ -175,7 +175,7 @@ MonoBehaviour:
   ySpeed: 1
   score: 1
   canShoot: 1
-  fireRate: 1
+  fireRate: 4
   health: 1
   percentageBonusLife: 10
   percentageBonusTripleShoot: 5

@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9868c1b559bb87b45b3a6224b2be7ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 1
+  levelIndex: 5
 --- !u!114 &488090447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,60 +923,3 @@ PrefabInstance:
       objectReference: {fileID: 1577688395}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
---- !u!1001 &8788769285588802484
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12562292975092268, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8967849452963137302, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
-      propertyPath: m_Name
-      value: enemy_cancer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}

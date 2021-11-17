@@ -32,7 +32,7 @@ public class BulletPlayer : MonoBehaviour
         }
         else if (col.gameObject.tag == "Enemy")
         {
-            col.gameObject.GetComponent<Enemy>().Damage();
+            col.gameObject.GetComponent<IEnemy>().Damage();
             Destroy(gameObject);
         }
 

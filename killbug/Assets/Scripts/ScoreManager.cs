@@ -9,6 +9,5 @@ public class ScoreManager : MonoBehaviour
     public void SetScore(int starsNum)
     {
         PlayerPrefs.SetInt("Lv" + levelIndex, starsNum);
-
     }
 }

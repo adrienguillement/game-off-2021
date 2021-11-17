@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCancer : MonoBehaviour
+public class EnemyCancer : MonoBehaviour, IEnemy
 {
     public GameObject bullet, bonusLife, bonusTripleShot, bonusDestroyAllEnemies, bonusShield;
     public GameObject malusAlzheimer;
@@ -40,12 +40,12 @@ public class EnemyCancer : MonoBehaviour
         canon = transform.Find("canon").gameObject;
 
         mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        LevelCancer.instance.AddEnemy();
     }
 
     void Start()
     {
         scoreScript = GameObject.Find("ScoreScript").GetComponent<ScoreScript>();
-        Level.instance.AddEnemy();
 
         if (!canShoot) return;
 
@@ -163,6 +163,6 @@ public class EnemyCancer : MonoBehaviour
 
     private void OnDestroy()
     {
-        Level.instance.RemoveEnemy();
+        LevelCancer.instance.RemoveEnemy((health == 0));
     }
 }
