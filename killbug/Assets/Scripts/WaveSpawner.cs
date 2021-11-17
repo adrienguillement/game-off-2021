@@ -63,7 +63,6 @@ public class WaveSpawner : MonoBehaviour
 
             // Stop spawning;
             state = SpawnState.STOPPED;
-            Debug.Log(state);
             StopCoroutine(coroutineSpawner);
         } 
         else

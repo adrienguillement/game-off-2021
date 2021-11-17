@@ -17,11 +17,12 @@ public class LevelCancer : MonoBehaviour
     private int numEnemies = 0;
     private int numEnemiesKills = 0;
     private int numEnemiesSpawn = 0;
-    private int maxEnnemies = 16;
+    private int maxEnnemies = 32;
 
     private bool startNextLevel = false;
     private float nextLevelTimer = 3f;
     private ScoreManager scoreManager;
+    private Vector2 mainCamera;
 
     private string[] levels = { "Level05_cancer", "LevelSelection" };
     int currentLevel = 1;
@@ -31,6 +32,8 @@ public class LevelCancer : MonoBehaviour
         instance = this;
 
         scoreManager = (ScoreManager)gameObject.GetComponent(typeof(ScoreManager));
+
+        mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
     private void Start()
@@ -52,10 +55,6 @@ public class LevelCancer : MonoBehaviour
                     string sceneName = levels[currentLevel - 1];
                     SceneManager.LoadScene(sceneName);
                 }
-                else
-                {
-                    Debug.Log("END");
-                }
                 nextLevelTimer = 3f;
                 startNextLevel = false;
             }
@@ -72,7 +71,7 @@ public class LevelCancer : MonoBehaviour
         numEnemiesSpawn++;
     }
 
-    public void RemoveEnemy(bool isPlayerKill)
+    public void RemoveEnemy(bool isPlayerKill, Vector3 positionDeath)
     {
         numEnemies--;
 
@@ -80,19 +79,13 @@ public class LevelCancer : MonoBehaviour
         {
             numEnemiesKills++;
 
-            Debug.Log("______");
-            Debug.Log("Num Ennemies Spawn : " + numEnemiesSpawn);
-
-            Debug.Log("Can spawn : " + (numEnemiesSpawn <= maxEnnemies).ToString());
-
-            if (numEnemiesSpawn + 1 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(0, 5), Quaternion.identity);
-            if (numEnemiesSpawn + 2 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(5, 5), Quaternion.identity);
-            Debug.Log("______");
+            if (numEnemiesSpawn + 1 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(Random.Range(-mainCamera.x, 0), Random.Range(2, mainCamera.y)), Quaternion.identity);
+            if (numEnemiesSpawn + 2 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(Random.Range(0, mainCamera.x), Random.Range(2, mainCamera.y)), Quaternion.identity);
         }
 
         if (numEnemies == 0)
         {
-            if (numEnemiesKills >= maxEnnemies) 
+            if (numEnemiesKills / maxEnnemies * 100 >= 80) 
                 scoreManager.SetScore(3);
             else if (numEnemiesKills > Mathf.Ceil((float)maxEnnemies / 2) && numEnemiesKills < maxEnnemies)
                 scoreManager.SetScore(2);

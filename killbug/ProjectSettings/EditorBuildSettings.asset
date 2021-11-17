@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: b756c53b88bd43141a3c72b127c7c3d6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level01.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level02.unity
     guid: d21e9e00145ab224fafaa01248bde236
+  - enabled: 1
+    path: Assets/Scenes/Level05_cancer.unity
+    guid: 15a148587b394534188ca20c08e5a64a
   m_configObjects: {}

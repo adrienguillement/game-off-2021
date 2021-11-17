@@ -39,10 +39,6 @@ public class Level : MonoBehaviour
                     string sceneName = levels[currentLevel - 1];
                     SceneManager.LoadScene(sceneName);
                 }
-                else
-                {
-                    Debug.Log("END");
-                }
                 nextLevelTimer = 3f;
                 startNextLevel = false;
             }

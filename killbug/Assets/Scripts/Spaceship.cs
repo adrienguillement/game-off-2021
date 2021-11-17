@@ -82,7 +82,6 @@ public class Spaceship : MonoBehaviour
 
         if (isShieldActivated)
         {
-            Debug.Log(shieldDurationTmp);
             if (shield == null)
             {
                 shield = Instantiate(shieldPrefab, transform.position, gameObject.transform.rotation);
