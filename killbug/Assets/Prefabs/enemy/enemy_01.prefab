@@ -166,7 +166,7 @@ MonoBehaviour:
   percentageBonusDestroyAllEnemies: 80
   percentageBonusShield: 5
   percentageMalusAlzheimer: 100
-  percentageGetSomething: 20
+  percentageGetSomething: 100
 --- !u!58 &7528362614599981676
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7965186658017664547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.071, z: 0}
+  m_LocalPosition: {x: 0, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 12562292975092268}
@@ -41,10 +41,10 @@ GameObject:
   - component: {fileID: 12562292975092268}
   - component: {fileID: 425528101496827359}
   - component: {fileID: 4146652622575945697}
-  - component: {fileID: 7965186656976493580}
-  - component: {fileID: 7679790709628838749}
+  - component: {fileID: 7528362614599981676}
+  - component: {fileID: 6475370064969174669}
   m_Layer: 8
-  m_Name: enemy_02_target
+  m_Name: enemy_cancer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 8967849452963137302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.32, y: 2.56, z: 0}
-  m_LocalScale: {x: 0.5048283, y: 0.5048283, z: 0.5048283}
+  m_LocalScale: {x: 0.29223, y: 0.274059, z: 0.274059}
   m_Children:
   - {fileID: 7965186658017664546}
   m_Father: {fileID: 0}
@@ -137,37 +137,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7965186656976493580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967849452963137302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f22709fb5166a149b03361eba131e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8109720096702685338, guid: 62943150e76aeb84d8870c23b7eaa492, type: 3}
-  bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
-  bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
-  bonusDestroyAllEnemies: {fileID: 99724856640952583, guid: b950b464b7eaef44ba76a77ddb6e9aa4, type: 3}
-  bonusShield: {fileID: 99724856640952583, guid: 7ffc0e275112c69479a87e5f9545a758, type: 3}
-  malusAlzheimer: {fileID: 99724856640952583, guid: e2ec74a097f64e0438843a6ed15df342, type: 3}
-  xSpeed: 0
-  ySpeed: 1
-  score: 1
-  canShoot: 1
-  fireRate: 1.5
-  health: 3
-  percentageBonusLife: 10
-  percentageBonusTripleShoot: 80
-  percentageBonusDestroyAllEnemies: 5
-  percentageBonusShield: 5
-  percentageMalusAlzheimer: 100
-  percentageGetSomething: 100
---- !u!58 &7679790709628838749
+--- !u!58 &7528362614599981676
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,6 +150,36 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009929852, y: 0}
+  m_Offset: {x: -0.00064291793, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0712681
+  m_Radius: 1.0633167
+--- !u!114 &6475370064969174669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967849452963137302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3f4be07489e5e41bc82f2fc089aeb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8109720096702685338, guid: 4fbe529beec48cc4fb855495d817a728, type: 3}
+  bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
+  bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
+  bonusDestroyAllEnemies: {fileID: 99724856640952583, guid: b950b464b7eaef44ba76a77ddb6e9aa4, type: 3}
+  bonusShield: {fileID: 99724856640952583, guid: 7ffc0e275112c69479a87e5f9545a758, type: 3}
+  malusAlzheimer: {fileID: 8109720096702685338, guid: 4fbe529beec48cc4fb855495d817a728, type: 3}
+  xSpeed: 0
+  ySpeed: 1
+  score: 1
+  canShoot: 1
+  fireRate: 1
+  health: 1
+  percentageBonusLife: 10
+  percentageBonusTripleShoot: 5
+  percentageBonusDestroyAllEnemies: 5
+  percentageBonusShield: 80
+  percentageMalusAlzheimer: 100
+  percentageGetSomething: 20
