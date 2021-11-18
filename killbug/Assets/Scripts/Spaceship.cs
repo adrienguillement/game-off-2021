@@ -23,6 +23,9 @@ public class Spaceship : MonoBehaviour
     public GameObject bullet;
     public float speed;
 
+    public AudioClip audioShot;
+    public AudioClip audioDeath;
+
     public Animator anim;
     private Vector2 mainCamera;
     private GameObject canon;
@@ -35,6 +38,7 @@ public class Spaceship : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
         canon = transform.Find("canon").gameObject;
         mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
@@ -155,6 +159,8 @@ public class Spaceship : MonoBehaviour
         delay = 0;
         Instantiate(bullet, canon.transform.position, Quaternion.identity);
 
+        SoundManager.PlayClip(audioShot, 0.3f);
+
         if (isTripleShootActivated)
         {
             GameObject rightBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.identity);
@@ -197,6 +203,8 @@ public class Spaceship : MonoBehaviour
 
     void Die()
     {
+        SoundManager.PlayClip(audioDeath, 0.5f);
+        
         Destroy(gameObject, 0.1f);
     }
 

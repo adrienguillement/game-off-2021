@@ -135,6 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  clip: {fileID: 8300000, guid: 416b66b78fb91864195e6aeb90a7e391, type: 3}
-  sound: {fileID: 2022012295628293672, guid: 34f84f3bf0d40794baa7f4d260731a75, type: 3}
   rb: {fileID: 0}

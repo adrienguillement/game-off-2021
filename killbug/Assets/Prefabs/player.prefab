@@ -130,11 +130,15 @@ MonoBehaviour:
   isShieldActivated: 0
   shieldDuration: 5
   shieldPrefab: {fileID: 6178481757593958057, guid: 2095c97b788b71c4a892617c9a2f765e, type: 3}
+  isAlzheimerActivated: 0
+  alzheimerDuration: 5
   isTripleShootActivated: 0
   tripleShootDuration: 5
   firerate: 60
   bullet: {fileID: 8109720096702685338, guid: b9c5d450bd396f54dbe2ea0fd9361462, type: 3}
   speed: 10
+  audioShot: {fileID: 8300000, guid: d130f24067f77c241a76e00865ec2cdb, type: 3}
+  audioDeath: {fileID: 8300000, guid: 25e14848d3547194dadda06085368315, type: 3}
   anim: {fileID: 2048151072}
 --- !u!60 &3167095885031909012
 PolygonCollider2D:

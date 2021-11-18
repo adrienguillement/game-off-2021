@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour, IEnemy
 
     public int percentageGetSomething = 20;
 
+    public AudioClip audioShot;
+    public AudioClip audioDeath;
+
     private Rigidbody2D rb;
     private GameObject canon;
     private GameObject player;
@@ -96,6 +99,8 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Shoot()
     {
+        SoundManager.PlayClip(audioShot, 0.3f);
+        
         if(player != null){
             if(player.transform.position.y + 0.5 < gameObject.transform.position.y)
                 Instantiate(bullet, canon.transform.position, Quaternion.identity);
@@ -104,6 +109,8 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Die()
     {
+        SoundManager.PlayClip(audioDeath, 0.5f);
+
         scoreScript.scoreValue += score;
 
         int randomNumber = (int)Random.Range(0, 101);
