@@ -85,7 +85,11 @@ public class LevelCancer : MonoBehaviour
 
         if (numEnemies == 0)
         {
-            if (numEnemiesKills / maxEnnemies * 100 >= 80) 
+            Debug.Log(numEnemiesKills);
+            Debug.Log(maxEnnemies);
+            Debug.Log(maxEnnemies * 100 >= 80);
+            Debug.Log((numEnemiesKills * 100 / maxEnnemies) >= 80);
+            if ((numEnemiesKills * 100 / maxEnnemies) >= 80) 
                 scoreManager.SetScore(3);
             else if (numEnemiesKills > Mathf.Ceil((float)maxEnnemies / 2) && numEnemiesKills < maxEnnemies)
                 scoreManager.SetScore(2);
