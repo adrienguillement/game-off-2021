@@ -168,6 +168,6 @@ public class EnemyCancer : MonoBehaviour, IEnemy
 
     private void OnDestroy()
     {
-        LevelCancer.instance.RemoveEnemy((health == 0), transform.position);
+        LevelCancer.instance.RemoveEnemy(health == 0);
     }
 }

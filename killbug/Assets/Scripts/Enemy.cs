@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IEnemy
 {
+    public Sprite[] sprites;
     public GameObject bullet, bonusLife, bonusTripleShot, bonusDestroyAllEnemies, bonusShield;
     public GameObject malusAlzheimer;
     public float xSpeed, ySpeed;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour, IEnemy
     private bool isShooting = false;
 
     private Vector2 mainCamera;
+    private float randomAngleRotation;
 
     void Awake()
     {
@@ -41,6 +43,10 @@ public class Enemy : MonoBehaviour, IEnemy
         canon = transform.Find("canon").gameObject;
 
         mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, 2)];
+
+        randomAngleRotation = (Random.Range(0, 2) * 2 - 1);
     }
 
     void Start()
@@ -55,6 +61,8 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Update()
     {
+        Debug.Log(Random.Range(0, 2) * 2 - 1);
+        transform.Rotate(new Vector3(0, 0, (randomAngleRotation * 20 * (1f * Time.deltaTime))));
         rb.velocity = new Vector2(xSpeed, ySpeed * -1);
 
         if(gameObject.transform.position.y < mainCamera.y)

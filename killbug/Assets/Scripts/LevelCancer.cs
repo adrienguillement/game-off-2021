@@ -71,7 +71,7 @@ public class LevelCancer : MonoBehaviour
         numEnemiesSpawn++;
     }
 
-    public void RemoveEnemy(bool isPlayerKill, Vector3 positionDeath)
+    public void RemoveEnemy(bool isPlayerKill)
     {
         numEnemies--;
 

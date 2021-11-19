@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 8967849452963137302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.32, y: 2.56, z: 0}
-  m_LocalScale: {x: 0.29223, y: 0.274059, z: 0.274059}
+  m_LocalScale: {x: 0.5845477, y: 0.5482002, z: 0.5482002}
   m_Children:
   - {fileID: 7965186658017664546}
   m_Father: {fileID: 0}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ccc6c4e8cfdd8f84eae17775616c599c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6a597800e10674aa410a1074a165ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,6 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f22709fb5166a149b03361eba131e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: ae6a597800e10674aa410a1074a165ab, type: 3}
+  - {fileID: 21300000, guid: d7194797211d39c4e9ab7d639eff19e5, type: 3}
   bullet: {fileID: 8109720096702685338, guid: 4fbe529beec48cc4fb855495d817a728, type: 3}
   bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
   bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
@@ -182,6 +185,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00064291793, y: 0}
+  m_Offset: {x: -0.03841096, y: 0.05111803}
   serializedVersion: 2
-  m_Radius: 1.0633167
+  m_Radius: 0.6219315

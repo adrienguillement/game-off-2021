@@ -310,6 +310,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4637880040942210750, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
   m_PrefabInstance: {fileID: 4637880041098052146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1203810040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 978795422989953488, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
+  m_PrefabInstance: {fileID: 978795422606619006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1203810041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203810040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01f6b30f1fd15d44be5b76f6a0e23a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreScript: {fileID: 893803349}
+  player: {fileID: 844365264}
+  scoreMax: 32
+  enemyCancer: {fileID: 8967849452963137302, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
+  timeToKill: 5
 --- !u!1 &1572905804 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4637880042385744254, guid: 094c149e9e6826d4c846c55812f20c07, type: 3}
@@ -471,7 +493,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 488090447, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
 --- !u!1001 &2613296578557879086
 PrefabInstance:
