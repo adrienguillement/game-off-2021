@@ -178,10 +178,10 @@ MonoBehaviour:
   canShoot: 1
   fireRate: 4
   health: 1
-  percentageBonusLife: 10
-  percentageBonusTripleShoot: 5
-  percentageBonusDestroyAllEnemies: 5
-  percentageBonusShield: 80
+  percentageBonusLife: 30
+  percentageBonusTripleShoot: 40
+  percentageBonusDestroyAllEnemies: 0
+  percentageBonusShield: 30
   percentageMalusAlzheimer: 100
   percentageGetSomething: 20
   audioShot: {fileID: 8300000, guid: 90eb3bb37b22ecb4ea577e26d6950aeb, type: 3}

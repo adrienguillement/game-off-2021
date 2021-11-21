@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     public Text CountDownText;
     public static bool isPaused = false;
+    public static bool isCountdown = false;
     public GameObject pauseMenuUI;
     public int countDownOnResume = 3;
 
@@ -20,18 +21,23 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!isCountdown)
         {
-            if (isPaused)
-                Resume();
-            else
-                Pause();
-        }    
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isPaused)
+                    Resume();
+                else
+                    Pause();
+            }
+        }
     }
 
     IEnumerator Countdown(int seconds)
     {
 
+        isCountdown = true;
         int counter = seconds;
         while (counter > 1)
         {
@@ -46,6 +52,7 @@ public class PauseMenu : MonoBehaviour
         CountDownText.text = countDownOnResume.ToString();
 
         Time.timeScale = 1f;
+        isCountdown = false;
         isPaused = false;
     }
 
