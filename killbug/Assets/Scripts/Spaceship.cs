@@ -163,10 +163,10 @@ public class Spaceship : MonoBehaviour
 
         if (isTripleShootActivated)
         {
-            GameObject rightBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.identity);
+            GameObject rightBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.Euler(new Vector3(0, 0, 40)));
             rightBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 1) * 10;
 
-            GameObject leftBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.identity);
+            GameObject leftBullet = (GameObject)Instantiate(bullet, canon.transform.position, Quaternion.Euler(new Vector3(0, 0, -40)));
             leftBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 1) * 10;
         }
     }
