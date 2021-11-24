@@ -15,18 +15,17 @@ public class Level : MonoBehaviour
 
     private int numEnemies = 0;
 
-    private bool startNextLevel = false;
+    private GameObject player;
     private bool isLevelEnded = false;
-    private float nextLevelTimer = 3f;
     private ScoreManager scoreManager;
 
     private string[] levels = { "Level01", "LevelSelection" };
-    int currentLevel = 1;
 
     private void Awake()
     {
         instance = this;
 
+        player = GameObject.FindGameObjectWithTag("Player");
         scoreManager = (ScoreManager)gameObject.GetComponent(typeof(ScoreManager));
     }
 
@@ -37,7 +36,10 @@ public class Level : MonoBehaviour
             UpdateStarsImage();
             endLevelUI.SetActive(true);
         }
-        
+        if (player == null)
+        {
+            isLevelEnded = true;
+        }
     }
 
     private void UpdateStarsImage()
@@ -74,7 +76,6 @@ public class Level : MonoBehaviour
                 scoreManager.SetScore(3);
             }
             isLevelEnded = true;
-            startNextLevel = true;
         }
     }
 

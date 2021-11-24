@@ -7,7 +7,6 @@ public class BonusDestroyAllEnemies : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     public GameObject shockwave;
-    private bool isPlaying = false;
 
 
     void Awake()
@@ -29,7 +28,6 @@ public class BonusDestroyAllEnemies : MonoBehaviour
 
             Instantiate(shockwave, transform.position, Quaternion.identity);
 
-            //If(!shockwave.isPlaying) shockwave.Play();
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
             for (int i = 0; i < bullets.Length; i++)

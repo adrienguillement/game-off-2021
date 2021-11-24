@@ -8,7 +8,6 @@ public class LevelCancer : MonoBehaviour
 {
     public static LevelCancer instance;
     public GameObject scoreScript;
-    public GameObject player;
     public int scoreMax;
     public GameObject endLevelUI;
     public GameObject[] stars;
@@ -23,19 +22,18 @@ public class LevelCancer : MonoBehaviour
     private int numEnemiesSpawn = 0;
     private int maxEnnemies = 32;
 
-    private bool startNextLevel = false;
+    private GameObject player;
     private bool isLevelEnded = false;
-    private float nextLevelTimer = 3f;
     private ScoreManager scoreManager;
     private Vector2 mainCamera;
 
     private string[] levels = { "Level05_cancer", "LevelSelection" };
-    int currentLevel = 1;
 
     private void Awake()
     {
         instance = this;
 
+        player = GameObject.FindGameObjectWithTag("Player");
         scoreManager = (ScoreManager)gameObject.GetComponent(typeof(ScoreManager));
 
         mainCamera = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -54,11 +52,16 @@ public class LevelCancer : MonoBehaviour
             UpdateStarsImage();
             endLevelUI.SetActive(true);
         }
+
+
+        if (player == null)
+        {
+            isLevelEnded = true;
+        }
     }
 
     private void UpdateStarsImage()
     {
-        Debug.Log(scoreManager.GetScore());
         for (int i = 0; i < scoreManager.GetScore(); i++)
         {
             stars[i].gameObject.GetComponent<Image>().sprite = starSprite;
@@ -92,8 +95,12 @@ public class LevelCancer : MonoBehaviour
             else if (numEnemiesKills > 0)
                 scoreManager.SetScore(1);
 
-            endLevelUI.SetActive(true);
-            isLevelEnded = true;
+            if(endLevelUI != null)
+            {
+                endLevelUI.SetActive(true);
+
+                isLevelEnded = true;
+            }
         }
     }
 
