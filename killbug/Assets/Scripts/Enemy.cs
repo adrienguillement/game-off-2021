@@ -106,11 +106,13 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Shoot()
     {
-        SoundManager.PlayClip(audioShot, 0.3f);
         
         if(player != null){
             if(player.transform.position.y + 0.5 < gameObject.transform.position.y)
+            {
+                SoundManager.PlayClip(audioShot, 0.3f);
                 Instantiate(bullet, canon.transform.position, Quaternion.identity);
+            }
         }
     }
 

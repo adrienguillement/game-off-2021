@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelCancer : MonoBehaviour
@@ -9,6 +10,9 @@ public class LevelCancer : MonoBehaviour
     public GameObject scoreScript;
     public GameObject player;
     public int scoreMax;
+    public GameObject endLevelUI;
+    public GameObject[] stars;
+    public Sprite starSprite;
 
     public GameObject enemyCancer;
 
@@ -20,6 +24,7 @@ public class LevelCancer : MonoBehaviour
     private int maxEnnemies = 32;
 
     private bool startNextLevel = false;
+    private bool isLevelEnded = false;
     private float nextLevelTimer = 3f;
     private ScoreManager scoreManager;
     private Vector2 mainCamera;
@@ -44,24 +49,19 @@ public class LevelCancer : MonoBehaviour
 
     void Update()
     {
-        if (startNextLevel)
+        if (isLevelEnded)
         {
-            if (nextLevelTimer <= 0)
-            {
-                currentLevel++;
+            UpdateStarsImage();
+            endLevelUI.SetActive(true);
+        }
+    }
 
-                if (currentLevel <= levels.Length)
-                {
-                    string sceneName = levels[currentLevel - 1];
-                    SceneManager.LoadScene(sceneName);
-                }
-                nextLevelTimer = 3f;
-                startNextLevel = false;
-            }
-            else
-            {
-                nextLevelTimer -= Time.deltaTime;
-            }
+    private void UpdateStarsImage()
+    {
+        Debug.Log(scoreManager.GetScore());
+        for (int i = 0; i < scoreManager.GetScore(); i++)
+        {
+            stars[i].gameObject.GetComponent<Image>().sprite = starSprite;
         }
     }
 
@@ -85,14 +85,32 @@ public class LevelCancer : MonoBehaviour
 
         if (numEnemies == 0)
         {
-            if ((numEnemiesKills * 100 / maxEnnemies) >= 80) 
+            if ((numEnemiesKills * 100 / maxEnnemies) >= 80)
                 scoreManager.SetScore(3);
             else if (numEnemiesKills > Mathf.Ceil((float)maxEnnemies / 2) && numEnemiesKills < maxEnnemies)
                 scoreManager.SetScore(2);
             else if (numEnemiesKills > 0)
                 scoreManager.SetScore(1);
 
-            startNextLevel = true;
+            endLevelUI.SetActive(true);
+            isLevelEnded = true;
         }
+    }
+
+    public void RestartLevel()
+    {
+        endLevelUI.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit game...");
+        Application.Quit();
     }
 }

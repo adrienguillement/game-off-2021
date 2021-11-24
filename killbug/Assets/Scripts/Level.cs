@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
@@ -8,10 +9,14 @@ public class Level : MonoBehaviour
     public static Level instance;
     public GameObject scoreScript;
     public int scoreMax;
+    public GameObject endLevelUI;
+    public GameObject[] stars;
+    public Sprite starSprite;
 
     private int numEnemies = 0;
 
     private bool startNextLevel = false;
+    private bool isLevelEnded = false;
     private float nextLevelTimer = 3f;
     private ScoreManager scoreManager;
 
@@ -27,28 +32,20 @@ public class Level : MonoBehaviour
 
     void Update()
     {
-
-        if (startNextLevel)
+        if (isLevelEnded)
         {
-            if (nextLevelTimer <= 0)
-            {
-                currentLevel++;
-
-                if (currentLevel <= levels.Length)
-                {
-                    string sceneName = levels[currentLevel - 1];
-                    SceneManager.LoadScene(sceneName);
-                }
-                nextLevelTimer = 3f;
-                startNextLevel = false;
-            }
-            else
-            {
-                nextLevelTimer -= Time.deltaTime;
-            }
+            UpdateStarsImage();
+            endLevelUI.SetActive(true);
         }
         
+    }
 
+    private void UpdateStarsImage()
+    {
+        for (int i = 0; i < scoreManager.GetScore(); i++)
+        {
+            stars[i].gameObject.GetComponent<Image>().sprite = starSprite;
+        }
     }
 
     public void AddEnemy()
@@ -76,7 +73,26 @@ public class Level : MonoBehaviour
             {
                 scoreManager.SetScore(3);
             }
+            isLevelEnded = true;
             startNextLevel = true;
         }
+    }
+
+
+    public void RestartLevel()
+    {
+        endLevelUI.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit game...");
+        Application.Quit();
     }
 }
