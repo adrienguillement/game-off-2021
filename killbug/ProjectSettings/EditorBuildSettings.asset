@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level05_cancer.unity
     guid: 15a148587b394534188ca20c08e5a64a
+  - enabled: 1
+    path: Assets/Scenes/Level10_depression.unity
+    guid: 9b29af867d5f56443ba3f923bfc2de17
   m_configObjects: {}

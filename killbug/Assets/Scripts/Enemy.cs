@@ -61,7 +61,6 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Update()
     {
-        Debug.Log(Random.Range(0, 2) * 2 - 1);
         transform.Rotate(new Vector3(0, 0, (randomAngleRotation * 20 * (1f * Time.deltaTime))));
         rb.velocity = new Vector2(xSpeed, ySpeed * -1);
 
