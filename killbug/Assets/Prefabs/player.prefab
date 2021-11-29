@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4729144898679495299}
   - component: {fileID: 4729144898679495301}
   - component: {fileID: 3167095885031909012}
-  - component: {fileID: 2048151072}
   m_Layer: 7
   m_Name: player
   m_TagString: Player
@@ -55,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +129,7 @@ MonoBehaviour:
   isShieldActivated: 0
   shieldDuration: 5
   shieldPrefab: {fileID: 6178481757593958057, guid: 2095c97b788b71c4a892617c9a2f765e, type: 3}
-  isAlzheimerActivated: 0
+  isAlzheimerActivated: 1
   alzheimerDuration: 5
   isTripleShootActivated: 0
   tripleShootDuration: 5
@@ -139,7 +138,7 @@ MonoBehaviour:
   speed: 10
   audioShot: {fileID: 8300000, guid: d130f24067f77c241a76e00865ec2cdb, type: 3}
   audioDeath: {fileID: 8300000, guid: 25e14848d3547194dadda06085368315, type: 3}
-  anim: {fileID: 2048151072}
+  anim: {fileID: 0}
 --- !u!60 &3167095885031909012
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -212,25 +211,6 @@ PolygonCollider2D:
       - {x: -0.25, y: -0.099999994}
       - {x: -0.19999999, y: -0.17}
       - {x: -0.04768142, y: -0.288261}
---- !u!95 &2048151072
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4729144898679495300}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a685fe6f92c5c56459e45e44700f1d66, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4729144898806652796
 GameObject:
   m_ObjectHideFlags: 0

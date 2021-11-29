@@ -26,7 +26,6 @@ public class Spaceship : MonoBehaviour
     public AudioClip audioShot;
     public AudioClip audioDeath;
 
-    public Animator anim;
     private Vector2 mainCamera;
     private GameObject canon;
     private int delay = 0;
@@ -74,8 +73,6 @@ public class Spaceship : MonoBehaviour
         {
             verticalInput = Input.GetAxisRaw("Vertical");
         }
-
-        anim.SetFloat("speed", horizontalInput * speed);
 
         rb.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
 

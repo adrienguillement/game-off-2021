@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 425528101496827359}
   - component: {fileID: 4146652622575945697}
   - component: {fileID: 7965186656976493580}
-  - component: {fileID: 7679790709628838749}
+  - component: {fileID: 9207137571778215283}
   m_Layer: 8
   m_Name: enemy_02_target
   m_TagString: Enemy
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ccc6c4e8cfdd8f84eae17775616c599c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a291d0adabad3cc42a6d4a99197c1ff7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,6 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f22709fb5166a149b03361eba131e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 598217b463ea29f4fa030b32ad8ec3c6, type: 3}
+  - {fileID: 21300000, guid: a291d0adabad3cc42a6d4a99197c1ff7, type: 3}
   bullet: {fileID: 8109720096702685338, guid: 62943150e76aeb84d8870c23b7eaa492, type: 3}
   bonusLife: {fileID: 99724856640952583, guid: 5764b91f17b3d9d40b63decc75be2e6d, type: 3}
   bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
@@ -169,8 +172,8 @@ MonoBehaviour:
   percentageGetSomething: 100
   audioShot: {fileID: 8300000, guid: 90eb3bb37b22ecb4ea577e26d6950aeb, type: 3}
   audioDeath: {fileID: 8300000, guid: 25e14848d3547194dadda06085368315, type: 3}
---- !u!58 &7679790709628838749
-CircleCollider2D:
+--- !u!60 &9207137571778215283
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,9 +182,73 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009929852, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.0712681
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.5, y: 2.5}
+    newSize: {x: 5.64, y: 4.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.39999998, y: -0.55}
+      - {x: 0.42, y: -0.53}
+      - {x: 0.5753987, y: -0.24136677}
+      - {x: 0.45, y: -0.089999996}
+      - {x: 0.68, y: -0.089999996}
+      - {x: 0.7, y: -0.049999997}
+      - {x: 0.7, y: -0.01}
+      - {x: 0.68, y: 0.01}
+      - {x: 0.39999998, y: 0.01}
+      - {x: 0.31, y: 0.17}
+      - {x: 0.53999996, y: 0.17999999}
+      - {x: 0.58, y: 0.26}
+      - {x: 0.48, y: 0.32}
+      - {x: 0.25, y: 0.26}
+      - {x: 0.17, y: 0.37}
+      - {x: 0.32999998, y: 0.48999998}
+      - {x: 0.29999998, y: 0.55}
+      - {x: 0.19, y: 0.53999996}
+      - {x: 0.089999996, y: 0.42}
+      - {x: -0.02, y: 0.53999996}
+      - {x: -0.03, y: 0.69}
+      - {x: -0.089999996, y: 0.71}
+      - {x: -0.11, y: 0.66999996}
+      - {x: -0.14999999, y: 0.81}
+      - {x: -0.22999999, y: 0.84999996}
+      - {x: -0.38, y: 0.85999995}
+      - {x: -0.5, y: 0.91999996}
+      - {x: -0.59999996, y: 0.91999996}
+      - {x: -0.61, y: 0.90999997}
+      - {x: -0.60169286, y: 0.7606772}
+      - {x: -0.62003326, y: 0.6708917}
+      - {x: -0.55, y: 0.59}
+      - {x: -0.7, y: 0.58}
+      - {x: -0.7, y: 0.5}
+      - {x: -0.65999997, y: 0.42999998}
+      - {x: -0.45999998, y: 0.42999998}
+      - {x: -0.39, y: 0.34}
+      - {x: -0.48, y: 0.31}
+      - {x: -0.56, y: 0.25}
+      - {x: -0.53999996, y: 0.19}
+      - {x: -0.44, y: 0.21}
+      - {x: -0.37, y: 0.089999996}
+      - {x: -0.34, y: 0.089999996}
+      - {x: -0.099999994, y: -0.06}
+      - {x: -0.099999994, y: -0.17999999}
+      - {x: -0.08, y: -0.22}
+      - {x: 0.099999994, y: -0.22}
+      - {x: 0.01, y: -0.35}
+      - {x: -0.01, y: -0.38}
+      - {x: -0.01, y: -0.53999996}
+      - {x: 0.03, y: -0.56}
+      - {x: 0.08, y: -0.56}
+      - {x: 0.089999996, y: -0.55}
+      - {x: 0.17999999, y: -0.26}
+      - {x: 0.35999998, y: -0.56}
