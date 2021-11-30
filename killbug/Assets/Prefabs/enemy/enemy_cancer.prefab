@@ -171,19 +171,19 @@ MonoBehaviour:
   bonusTripleShot: {fileID: 99724856640952583, guid: 6509b1798b662724c8ed609a3d460e77, type: 3}
   bonusDestroyAllEnemies: {fileID: 99724856640952583, guid: b950b464b7eaef44ba76a77ddb6e9aa4, type: 3}
   bonusShield: {fileID: 99724856640952583, guid: 7ffc0e275112c69479a87e5f9545a758, type: 3}
-  malusAlzheimer: {fileID: 8109720096702685338, guid: 4fbe529beec48cc4fb855495d817a728, type: 3}
+  malusAlzheimer: {fileID: 99724856640952583, guid: e2ec74a097f64e0438843a6ed15df342, type: 3}
   xSpeed: 0
   ySpeed: 1
   score: 1
   canShoot: 1
   fireRate: 4
   health: 1
-  percentageBonusLife: 30
-  percentageBonusTripleShoot: 40
+  percentageBonusLife: 35
+  percentageBonusTripleShoot: 20
   percentageBonusDestroyAllEnemies: 0
-  percentageBonusShield: 30
+  percentageBonusShield: 45
   percentageMalusAlzheimer: 100
-  percentageGetSomething: 20
+  percentageGetSomething: 100
   audioShot: {fileID: 8300000, guid: 90eb3bb37b22ecb4ea577e26d6950aeb, type: 3}
   audioDeath: {fileID: 8300000, guid: 25e14848d3547194dadda06085368315, type: 3}
 --- !u!82 &3710127384141485200
