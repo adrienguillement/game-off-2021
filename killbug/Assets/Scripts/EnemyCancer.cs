@@ -147,10 +147,6 @@ public class EnemyCancer : MonoBehaviour, IEnemy
 
                 if (randomMalusNumber > 0 && randomMalusNumber <= percentageMalusAlzheimer)
                 {
-                    Debug.Log("SPAWN");
-                    Debug.Log(malusAlzheimer);
-                    Debug.Log(transform.position);
-                    Debug.Log(Quaternion.identity);
                     Instantiate(malusAlzheimer, transform.position, Quaternion.identity);
                 }
             }

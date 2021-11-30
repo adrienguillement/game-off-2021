@@ -20,9 +20,7 @@ public class LightDepression : MonoBehaviour
 
     void Update()
     {
-
         lightSource.pointLightInnerRadius = currentInnerRadius;
-        Debug.Log("currentInnterRadius : " + currentInnerRadius);
 
         if (currentInnerRadius <= minInnerRadius)
         {

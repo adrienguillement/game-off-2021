@@ -12,6 +12,7 @@ public class Level : MonoBehaviour
     public GameObject endLevelUI;
     public GameObject[] stars;
     public Sprite starSprite;
+    public string nextLevel;
 
     private int numEnemies = 0;
 
@@ -58,7 +59,6 @@ public class Level : MonoBehaviour
     public void RemoveEnemy()
     {
         numEnemies--;
-
         if (numEnemies == 0)
         {
             var finalScore = scoreScript.GetComponent<ScoreScript>().scoreValue;
@@ -79,6 +79,10 @@ public class Level : MonoBehaviour
         }
     }
 
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
 
     public void RestartLevel()
     {
@@ -88,7 +92,7 @@ public class Level : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("LevelSelection");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

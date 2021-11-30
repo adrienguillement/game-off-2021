@@ -12,6 +12,7 @@ public class LevelCancer : MonoBehaviour
     public GameObject endLevelUI;
     public GameObject[] stars;
     public Sprite starSprite;
+    public string nextLevel;
 
     public GameObject enemyCancer;
 
@@ -85,7 +86,7 @@ public class LevelCancer : MonoBehaviour
             if (numEnemiesSpawn + 1 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(Random.Range(-mainCamera.x, 0), Random.Range(2, mainCamera.y)), Quaternion.identity);
             if (numEnemiesSpawn + 2 <= maxEnnemies) Instantiate(enemyCancer, new Vector2(Random.Range(0, mainCamera.x), Random.Range(2, mainCamera.y)), Quaternion.identity);
         }
-
+        Debug.Log(numEnemies);
         if (numEnemies == 0)
         {
             if ((numEnemiesKills * 100 / maxEnnemies) >= 80)
@@ -102,6 +103,11 @@ public class LevelCancer : MonoBehaviour
                 isLevelEnded = true;
             }
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
     }
 
     public void RestartLevel()
