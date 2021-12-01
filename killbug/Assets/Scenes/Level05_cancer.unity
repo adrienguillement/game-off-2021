@@ -403,9 +403,9 @@ MonoBehaviour:
   scoreMax: 32
   endLevelUI: {fileID: 1471148396}
   stars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1258679549}
+  - {fileID: 1258679548}
+  - {fileID: 1258679547}
   starSprite: {fileID: 2747690628134850419, guid: aed1b78fc422acf428fcd50271cc1447, type: 3}
   nextLevel: Level10_depression
   enemyCancer: {fileID: 8967849452963137302, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
@@ -487,6 +487,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d434e1e9180bd548b6825f80741a99b, type: 3}
+--- !u!1 &1258679547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3439255736481277044, guid: 5d434e1e9180bd548b6825f80741a99b, type: 3}
+  m_PrefabInstance: {fileID: 1258679546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1258679548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3439255736303269370, guid: 5d434e1e9180bd548b6825f80741a99b, type: 3}
+  m_PrefabInstance: {fileID: 1258679546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1258679549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3439255736057517221, guid: 5d434e1e9180bd548b6825f80741a99b, type: 3}
+  m_PrefabInstance: {fileID: 1258679546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1471148396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3439255736864577122, guid: 5d434e1e9180bd548b6825f80741a99b, type: 3}
@@ -747,6 +762,14 @@ PrefabInstance:
     - target: {fileID: 3527710284798464605, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
       propertyPath: levelIndex
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741471264564317095, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5faab4c4ef59aec4fbc773915b52ec49, type: 3}
+    - target: {fileID: 6741471264564317095, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
+      propertyPath: musicVolume
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 488090447, guid: 94c7e92f0fabfa449a56567b6c3ac9a9, type: 3}
