@@ -18,10 +18,11 @@ public class LevelCancer : MonoBehaviour
 
     public int timeToKill;
 
+    public int maxEnnemies = 32;
+
     private int numEnemies = 0;
     private int numEnemiesKills = 0;
     private int numEnemiesSpawn = 0;
-    private int maxEnnemies = 32;
 
     private GameObject player;
     private bool isLevelEnded = false;

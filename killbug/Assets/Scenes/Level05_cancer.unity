@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreScript: {fileID: 893803349}
-  scoreMax: 32
+  scoreMax: 40
   endLevelUI: {fileID: 1471148396}
   stars:
   - {fileID: 1258679549}
@@ -410,6 +410,7 @@ MonoBehaviour:
   nextLevel: Level10_depression
   enemyCancer: {fileID: 8967849452963137302, guid: 92460266163f67b48ac3a7d6671ebdf1, type: 3}
   timeToKill: 5
+  maxEnnemies: 40
 --- !u!1001 &1258679546
 PrefabInstance:
   m_ObjectHideFlags: 0
