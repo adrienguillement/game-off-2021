@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Die()
     {
-        SoundManager.PlayClip(audioDeath, 0.5f);
+        //SoundManager.PlayClip(audioDeath, 0.5f);
 
         scoreScript.scoreValue += score;
 
