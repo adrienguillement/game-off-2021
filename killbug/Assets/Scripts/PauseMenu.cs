@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!isCountdown)
         {
-
+            /**
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (isPaused)
@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
                 else
                     Pause();
             }
+    **/
         }
     }
 

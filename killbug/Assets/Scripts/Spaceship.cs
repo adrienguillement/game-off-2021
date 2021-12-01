@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 
 public class Spaceship : MonoBehaviour
@@ -34,6 +36,9 @@ public class Spaceship : MonoBehaviour
     private float shieldDurationTmp, tripleShootDurationTmp, alzheimerDurationTmp;
     private Color lerpedColorShield = Color.white;
 
+    private Vector3 rawInputMovement;
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,7 +59,7 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
-        var horizontalInput = Input.GetAxisRaw("Horizontal");
+        //var horizontalInput = Input.GetAxisRaw("Horizontal");
         var verticalInput = 0f;
 
         if (isAlzheimerActivated)
@@ -71,15 +76,11 @@ public class Spaceship : MonoBehaviour
         }
         else
         {
-            verticalInput = Input.GetAxisRaw("Vertical");
+            //verticalInput = Input.GetAxisRaw("Vertical");
         }
+        Debug.Log(rawInputMovement.y);
+        rb.velocity = new Vector2(rawInputMovement.x * speed, rawInputMovement.y * speed);
 
-        rb.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
-
-        if (Input.GetButton("Fire2") && delay > firerate)
-        {
-            Shoot();
-        }
 
         if (isShieldActivated)
         {
@@ -231,5 +232,20 @@ public class Spaceship : MonoBehaviour
     public void ResetAlzheimerDurationTmp()
     {
         alzheimerDurationTmp = alzheimerDuration;
+    }
+
+    public void OnMovement(InputAction.CallbackContext value)
+    {
+        Vector2 inputMovement = value.ReadValue<Vector2>();
+        rawInputMovement = new Vector3(inputMovement.x, inputMovement.y, 0);
+    }
+
+    public void OnAttack(InputAction.CallbackContext value)
+    {
+        Debug.Log(value.interaction);
+            if (delay > firerate)
+            {
+                Shoot();
+            }
     }
 }
