@@ -5484,6 +5484,10 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 4729144898679495301, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729144898679495301, guid: 591c12afc3287f1498e9704e3d1308cd, type: 3}
       propertyPath: hearths.Array.data[0]
       value: 
       objectReference: {fileID: 538936683}

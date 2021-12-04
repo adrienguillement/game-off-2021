@@ -133,7 +133,7 @@ MonoBehaviour:
   alzheimerDuration: 5
   isTripleShootActivated: 0
   tripleShootDuration: 5
-  firerate: 60
+  firerate: 35
   bullet: {fileID: 8109720096702685338, guid: b9c5d450bd396f54dbe2ea0fd9361462, type: 3}
   speed: 10
   audioShot: {fileID: 8300000, guid: 90eb3bb37b22ecb4ea577e26d6950aeb, type: 3}
